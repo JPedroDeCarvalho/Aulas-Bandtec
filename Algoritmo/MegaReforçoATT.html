@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+</head>
+<body>
+    <center>
+
+        <div id="display_div" style="display: block;">.
+
+    <H1>Consulte sua Nota</H1>
+  Entre com seu Nome...  <input id="ipt_nome" type="text" placeholder="Nome"> 
+  <br> <br>
+
+    Entre com a Nota 1 <select id="sel_nota1">
+         <option value="0">0</option>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+         <option value="10">10</option>
+    </select> <br> 
+
+    Entre com a Nota 2 <select id="sel_nota2">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+   </select> <br>
+
+   Entre com a Nota 3  <select id="sel_nota3">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select> <br> <br>
+   
+
+    <img onclick="magica()" src="https://thumbs.dreamstime.com/b/%C3%ADcone-da-calculadora-conceito-do-neg%C3%B3cio-com-matem%C3%A1tica-40767338.jpg" height="90px">
+</div>
+
+
+    <img id="bt_voltar" onclick="retorno()" src="https://image.freepik.com/vetores-gratis/calculadora-matematica-accountant-web-icon_48369-10515.jpg" height="90px" style="display: none;">
+
+    
+
+    <div id="div_msg"></div>
+
+    <div id="div_armazenamento"></div>
+   
+     
+
+</center>
+</body>
+</html>
+
+<script>
+var ax_armazenamento = (ipt_nome.value)
+
+ function magica() {
+
+display_div.style.display = 'none';
+bt_voltar.style.display = "block";
+div_msg.style.display = 'block'
+
+
+  var ax_n1 = Number(sel_nota1.value)
+  var ax_n2 = Number(sel_nota2.value)
+  var ax_n3 = Number(sel_nota3.value)
+  var ax_nome = (ipt_nome.value)
+  var ax_media = ((ax_n1 + ax_n2 + ax_n3) / 3)
+  var ax_resultado = "Aprovado";
+
+  //div_armazenamento.innerHTML += `Aluno - ${ax_armazenamento}<br> <br>` 
+  
+
+
+
+    if (ax_media >= 6) {div_msg.innerHTML = `<b>${ax_nome}</b>, Sua Média foi ${ax_media.toFixed(1)}. <br><b> ${ax_resultado}</b>`}
+
+  else {ax_resultado = "Reprovado"; div_msg.innerHTML = `<b>${ax_nome}</b>, Sua Média foi ${ax_media.toFixed(1)}. <br><b> ${ax_resultado}</b>`}
+
+
+     
+ }
+
+ function retorno() {
+display_div.style.display = 'block';
+bt_voltar.style.display = "none";
+div_msg.style.display = 'none'
+
+var ax_n1 = Number(sel_nota1.value) = 0;
+  var ax_n2 = Number(sel_nota2.value) = 0;
+  var ax_n3 = Number(sel_nota3.value) =0;
+
+  
+
+    
+  
+
+
+    
+     
+ }
+
+ 
+
+
+
+</script>

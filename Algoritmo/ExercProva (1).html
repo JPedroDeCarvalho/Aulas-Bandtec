@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Prova</title>
+</head>
+<body>
+
+<div id="div_disp" style="display: block;"> 
+    <h2>Seja Bem Vindo ao Banco KNAB</h2>
+    <h3>Simulação de Emprestimos e Investimentos</h3>
+
+    <h5>Entre com os dados da sua conta:</h5>
+    <input id="ipt_conta" placeholder="Conta">
+    <input id="ipt_digito" placeholder="Digito">
+    <input id="ipt_senha" placeholder="Senha">
+    <br> <br>
+
+    <button onclick="bt_simular()">Simular</button>
+</div>
+<div id="div_disp2" style="display: none;">
+    <h2>O Banco KNAB é a sua melhor opção</h2>
+    <h3>Emprestimos e Investimentos com as melhores taxas do mercado</h3>
+    <h4>Entre com os dados da sua simulação</h4>
+
+    Valor da Operação: <input id="ipt_valor" placeholder="valor"> 
+    <br> <br>
+
+    <select id="sele_operacao">
+        <option value="Operacao">Selecione a Operação...</option>
+        <option value="Investimento">Investimentos</option>
+        <option value="Emprestimos">Emprestimos</option> 
+    </select>
+
+    <select id="sele_prazo">
+        <option value="Prazo">Selecione o Prazo...</option>
+        <option value="Curto">Curto</option>
+        <option value="Medio">Medio</option>
+         <option value="Longo">Longo</option>
+    </select> 
+    <br> <br>
+
+    <button onclick="bt_Resultado()">Mostrar Resultado</button>
+</div>
+</body>
+</html>
+
+<script>
+function bt_simular() {
+    
+
+    var ax_resto = ipt_conta.value %11;
+
+    if (ipt_conta.value !=0) {
+        if(ax_resto == ipt_digito.value) {
+
+            if (ipt_digito.value == 0 || 1 || 2 || 3 & ipt_senha.value == "Manaus") {div_disp.style.display = "none"
+    div_disp2.style.display = "block" }
+
+            if (ipt_digito.value == 4 || 5 || 6 || 7 & ipt_senha.value == "Recife") {div_disp.style.display = "none"
+    div_disp2.style.display = "block" }
+
+            if (ipt_digito.value == 8 || 9 || 10 & ipt_senha.value == "Fortaleza") {div_disp.style.display = "none"
+    div_disp2.style.display = "block" }
+        }
+        else {
+            alert ("Conta tem que ser diferente de zero Digito que que ser igual ao resto da divisão da conta por 11 Senha tem que ser igual a manaus se o digito for 0, 1, 2 ou 3 recife se o digito estiver entre 4 e 7 fortaleza para os demais dígitos")
+        }
+        
+    }
+
+}
+
+
+
+
+</script>
