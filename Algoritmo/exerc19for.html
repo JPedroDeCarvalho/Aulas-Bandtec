@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19 for</title>
+</head>
+<body>
+    Entre com sua idade <input id="ipt_idade" placeholder="Idade">
+    <button onclick="bt()">Ver idade</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+    function bt() {
+        var idade = ipt_idade.value;
+
+        msg.innerHTML = '';
+
+        for (var contador = 0; contador < idade; contador++) {
+            if (idade >= 0 && idade <= 4) {
+                msg.innerHTML += `<br> ${contador} Anos - Primeira Infância`
+            }
+            if (idade >= 5 && idade <= 6) {
+                msg.innerHTML += `<br> ${contador} Anos - Pré-escolar`
+            }
+            if (idade >= 7 && idade <= 10) {
+                msg.innerHTML += `<br> ${contador} Anos - Pré-escolar`
+            }
+            if (idade >= 11 && idade <= 18) {
+                msg.innerHTML += `<br> ${contador} Anos - Adolescência`
+            }
+            if (idade >= 19 && idade <= 50) {
+                msg.innerHTML += `<br> ${contador} Anos - Adulto`
+            }
+            if (idade >= 51 && idade <= 100) {
+                msg.innerHTML += `<br> ${contador} Anos - Melhor idade`
+            }
+            else if (idade >= 101) {
+                msg.innerHTML += `<br> ${contador} Anos - Matusalém`
+            }
+            
+        
+            
+        }
+    }
+
+// - Primeira Infância: 0 a 4 anos
+
+// - Pré-escolar: + de 4 aos 6 anos
+
+// - Segunda Infância: + de 6 aos 10 anos
+
+// - Adolescência: + de 10 aos 18 anos
+
+// - Adulto: + de 18 até os 50 anos
+
+// - Melhor idade: + de 50 anos até 100 anos
+
+// - Matusalém: + de 100 anos
+
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20 for</title>
+</head>
+<body>
+    <!-- JP -->
+    <button onclick="bt()">Ver minha sorte</button> <br><br>
+    <div id="msg"></div>
+
+    <span style="color: red;"></span>
+</body>
+</html>
+
+
+<script>
+
+
+    function bt() {
+        
+    var cartas = 0;
+    var coracao = 0;
+    var sorte = 0;
+
+        msg.innerHTML = ''
+
+        for (var contador = 0; contador <= 21; contador++) {
+
+            sorte = Number((Math.random() * 1).toFixed())
+            if (sorte == 0 ) {
+            coracao ++;
+        msg.innerHTML += `<img src="https://greenpng.com/wp-content/uploads/2020/07/1596123856235-300x300.png" width="70px">              `
+         } 
+        else {
+        cartas ++;
+            msg.innerHTML += `<img src="https://image.freepik.com/fotos-gratis/cartas-de-jogar-baralho-completo-e-modelo-de-fundo-branco-traseiro_3544-1130.jpg" width="100px">            `
+            }
+        if (cartas == 11) {
+            msg.innerHTML += `<h2> <br> Você tem mais sorte no  <span style="color: blue;">Jogo</span>! </b> </h2>`;
+            break
+        }
+        if (coracao == 11) {
+            msg.innerHTML += `<h2> <br> Você tem mais sorte no  <span style="color: red;">Amor</span>! </b> </h2>`;
+            break
+        }
+
+        }
+    }
+</script>

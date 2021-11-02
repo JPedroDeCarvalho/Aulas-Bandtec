@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body style="position: relative; width: 940px;margin: 0 auto; " >
+
+    <h1 style="display: inline;"> <img style="width: 200px;" src="https://spbancarios.com.br/sites/default/files/styles/interna_grande/public/destaques/PLR-bancarios-Ita%C3%BA-2021.png?itok=2ee9cmtr"> </h1>
+<h2 style="text-align: center;display: inline;margin-left: 100px; " >Simulador Financeiro Moon Fox </h2><br><br><br>
+<span style="text-align: center;" >   dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span><br><br>
+
+<form id="bloco_calculo" style="border: solid 1px;border-radius: 20px;width: 600px;height: 300px;margin: 0 auto;">
+<div> <h2 style="text-align: center;" > Cálculo mensal de beneficios do nosso sistema </h2></div>
+<div style="font-size: 16px;font-family:'Trebuchet MS', Arial, sans-serif ; padding-bottom: 9px;margin-left: 30px;" > Perda de ABS<span style="float: right;margin-right: 34px;" >Gastos com Resfriamento</span>  </div>
+<input id="ipt_percadepecas" type="text" placeholder="Insira a porcentagem de perda" style="background-color:lightblue;border: solid 1px ;border-radius: 10px; width: 185px;height: 40px;text-align: center;margin-left: 20px;" >
+<input id="ipt_gastoResfriamento" type="text" placeholder="Os gastos com resfriamentos" style="background-color:lightblue;border: solid 1px ;border-radius: 10px; width: 185px;height: 40px;text-align: center;float: right;margin-right: 30px;" >
+<div style="font-size: 16px;font-family:'Trebuchet MS', Arial, sans-serif ; padding-top: 30px;padding-bottom: 5px;margin-left: 30px;" > Perda de Materiais    <span style="float: right;margin-right: 50px;" >Tempo de operação</span>  </div>
+<input id="ipt_perdademateriais" type="text" placeholder="Insira a porcentagem de perda" style="background-color:lightblue;border: solid 1px ;border-radius: 10px; width: 185px;text-align: center;margin-left: 20px;height: 40px;" > 
+<input id="ipt_tempodeOperacoes" type="text" placeholder="Tempo de operação em horas" style="background-color:lightblue;border: solid 1px ;border-radius: 10px; width: 185px;text-align: center;height: 40px;float: right;margin-right: 30px;"> <br><br>
+<button onclick="calcular()" style="text-align: center;margin-left: 226px;border-radius: 20px;height: 40px;width: 150px;border: none;font-size: 18px;font-weight: bold;background: blue;cursor: pointer;"  >Calcular</button>
+
+
+
+</form><br><br><br><br><br><br>
+
+
+<div style="text-align: center;" id="div_msg"></div>
+
+
+
+</body>
+</html>
+
+
+<script>
+
+function calcular(){
+
+var perdaMateriais = Number(ipt_perdademateriais.value);
+var gastoResfriamento = Number(ipt_gastoResfriamento.value);
+var perdaABS = Number(ipt_percadepecas);
+var tempoOperacao = Number(ipt_tempodeOperacoes.value);
+
+var TempoOperacaoMoonfox = (504) 
+var perdaABSMoonfox = Number('5%')
+var GastosResfriamentoMoonfox =  (600)
+var perdaMateriaisMoonfox =('90%')
+
+
+div_msg.innerHTML =  ` Com os nossos serviços você terá essas vantagens:<br>
+                       O tempo de operação de sua impressora aumentará em ${tempoOperacao - TempoOperacaoMoonfox }horas<br>
+                       Suas percas com ABS diminuirão ${perdaABS - perdaABSMoonfox }<br>
+                       Você vai enconomizar R$${gastoResfriamento - GastosResfriamentoMoonfox }<br>
+                       Kdslkajdklajdklajsd dkjsdlak ${perdaMateriais}; `  
+
+
+
+}
+
+
+
+
+
+</script>

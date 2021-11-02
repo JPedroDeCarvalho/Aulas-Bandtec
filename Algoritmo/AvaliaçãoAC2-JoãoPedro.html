@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova AC2</title>
+</head>
+<body>
+<!-- João Pedro siqueira de Carvalho, 01212104
+Boa tarde Professor, espero que esteja tudo bem.
+Minha prova ta muito bagunçada pois tive uma grande difuldade e acabei não conseguindo desenvolver ela toda
+porem, fiz tudo que eu sabia, prefiro enviar com algum conteudo do que não enviar nada. Abraços -->
+
+    <div id="div_pt1" style="display: block;">
+    <h2>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h2>
+
+    <Select id="select_1">
+        <option value="Pipoca de Chocolate">Pipoca de Chocolate</option>
+        <option value="Pipoca de Caramelo">Pipoca de Caramelho</option>
+     </Select> 
+
+     <select id="select_2">
+         <option value="Pacote Pequeno">Pacote Pequeno</option>
+         <option value="Pacote Grande">Pacote Grande</option>
+     </select> 
+<br> <br>
+    
+ Quantidade Solicitada: <input id="ipt_valor" placeholder="entre com a Quantidade"> <br>
+ Quantidade de Acuçar: <input id="ipt_acucar" placeholder="entre com a Quantidade"> <br> <br>
+
+ <button id="bt_validaçao" onclick="validar()" style="display: block;">Orçar</button> <br> <br>
+</div>
+
+ <button id="bt_refresh" onclick="refresh()" style="display: none;">Novo Orçamento</button> <br> <br>
+ <button id="bt_comprar" onclick="comprar()"  style="display: none;">Comprar!</button> <br> <br>
+
+<div id="div_msg1"></div>
+<div id="div_msg2"></div>
+<div id="div_msg3"></div>
+
+<div id="msg_principal" style="display: none;">.</div>
+
+<div id="MSG_FINAL"></div>
+
+   
+</body>
+</html>
+
+<script>
+var ax_tudo = ((ipt_valor.value) * 3) 
+
+    function validar() {
+// var ax_tudo = ((ipt_valor.value) * 3) 
+
+msg_principal.innerHTML = `Quantidade Solicitada: <b> ${ipt_valor.value} </b> <br> Embalagem Selecionada: <b> ${select_2.value} </b> <br> Produto Selecionado: <b> ${select_1.value} </b> <br>
+        O Valor Total das Pipocas é de R$ ${ax_tudo} <br> <br> `
+
+
+msg_principal.style.display = "block"
+
+
+        if(ipt_valor.value >= 5000){
+            alert ('Consulte nosso PCP! (planejamento e controle da produção)') 
+           
+        }
+         if (ipt_valor.value <= 500) {
+            alert ('Só vendemos por Atacado')
+            
+        }
+
+        if(ipt_acucar.value > 8){
+            alert ('Quantidade Invalida de Açucar')
+            
+        }
+
+        if (ax_tudo > 999.99 ) {
+            alert ('Para essa quantidade adicional de açúcar será cobrado um adicional de R$ 999,99')
+        }
+bt_refresh.style.display = "block";
+bt_comprar.style.display = "block";
+        
+}
+  function refresh() {
+    select_1.value = ''
+    select_2.value = ''
+    ipt_acucar.value = ''
+    ipt_valor.value = ''
+    bt_refresh.style.display = "none"
+    bt_comprar.style.display = "none"
+    bt_bt.style.display = "block" 
+    msg_principal.style.display = "block"
+
+
+  }
+    function comprar(){
+        var ax_desconto_total = Math.random();
+        //  var ax_tudo = ((ipt_valor.value) * 3) 
+
+
+        if (ax_desconto_total <= 6.6 ) {
+            MSG_FINAL.innerHTML = `PARABÉNS!!! Você recebeu um bônus de <b>${ax_desconto_total.toFixed(2)} </b>, na sua próxima compra você terá um bônus de <b> R$ ${ax_desconto_total - ax_tudo} </b> <br> <br> `
+        }
+}
+  
+</script>

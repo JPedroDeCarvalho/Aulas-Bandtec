@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Peso</title>
+</head>
+<body>
+    <center>
+       <h3>O peso de uma criança de 5 anos:</h3>
+        <br>
+     Qual é o Peso: <input id="ipt_peso"><br>
+        <br>
+        <button onclick="bt_calculo()">Calcule o Peso</button>
+        <br>
+        <div id="div_msg"></div>
+    </center>
+</body>
+</html>
+
+<script>
+    function bt_calculo(){      
+var ax_peso= Number(ipt_peso.value);
+
+
+    if ( ax_peso <= 13.5 ) {
+      div_msg.innerHTML= ` <b> A Criança esta abaixo do Peso! <br>`
+    }
+    else if (ax_peso > 21.2){
+      div_msg.innerHTML = ` <b> A Criança esta acima do Peso! <br>`
+    }
+    else if (ax_peso > 13.5 ) { 
+        div_msg.innerHTML = ` <b> A Criança esta com o Peso na média! <br>`
+    }
+    else if (ax_peso <= 21.2) {
+        div_msg.innerHTML = ` <b> A Criança esta com o Peso na média! <br>`
+    }
+     if (ax_peso == 18.3) {
+        div_msg.innerHTML = ` <b> A Criança esta com o Peso perfeito! <br>`
+    }
+
+}
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b><h2>Sistema de votação</h2></b>  
+    <h3>Votos Craque Neto</h3> 
+    <input id="ipt_1" placeholder="digite aqui" type="text"> <br>
+
+    <h3>Votos Denílson</h3> 
+    <input id="ipt_2" placeholder="digite aqui" type="text"> <br>
+
+    <h3>Votos Brancos</h3> 
+    <input id="ipt_branco" placeholder="digite aqui" type="text"> <br>
+
+    <h3>Votos nulos</h3> 
+    <input id="ipt_nulo" placeholder="digite aqui" type="text"> <br>
+
+    <button style="background-color: blue; color:white ;" onclick="analisar()"> <b>Resultado da Eleição</b> </button>
+
+    <div id="ipt_msg"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var candidato1 = Number(ipt_1.value);
+        var votosTotais = Number(ipt_1.value) + Number(ipt_2.value) +
+        Number(ipt_branco.value) + Number (ipt_nulo.value);
+        var resultado = (ipt_1.value / votosTotais) * 100;
+        
+        ipt_msg.innerHTML += `<b>Total de votos:  <u> ${votosTotais} </u> </b> <br>  <b> Craque Neto: </b> ${resultado} 
+        % (${candidato1}votos) <br>
+        <div style="background-color: darkred; height: 30px; float: left; width: 40%; ${candidato1}%"></div><br>`;
+     
+        var candidato2 = Number(ipt_2.value);
+        var votosTotais = Number(ipt_1.value) + Number(ipt_2.value) +
+        Number(ipt_branco.value) + Number (ipt_nulo.value);
+        var resultado2 = (ipt_2.value / votosTotais) * 100;
+        
+        ipt_msg.innerHTML += ` <br>  <b> Denílson: </b> ${resultado2} 
+        % (${candidato2}votos) <br>
+        <div style="background-color: darkgreen; height: 30px; float: left; width: 35%; ${candidato2}%"></div><br>`;
+        
+        var invalido = Number(ipt_branco.value) + Number(ipt_branco.value);
+        var votosTotais = Number(ipt_1.value) + Number(ipt_2.value) +
+        Number(ipt_branco.value) + Number (ipt_branco.value);
+        var resultado3 = (invalido / votosTotais) * 100;   
+     
+        ipt_msg.innerHTML += `<br> <b> Invalidos: </b> ${resultado3} % 
+         (${invalido}votos)<br>
+         <div style="background-color: darkgrey; height: 30px; float: left; width: 25%; ${invalido}%"></div>`;
+    }
+</script>

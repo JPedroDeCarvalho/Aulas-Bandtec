@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="começo_de_jogo()">Iniciar jogo</button>
+
+    <div id="começo_da_luta" style="display: none;">
+    
+     <img onclick="Ataque_subzero()" src="https://moodle.digitalschool.com.br/pluginfile.php/3753/mod_page/content/2/image%20%282%29.png" style="height: 300px; width:300px; float:left;"><br>
+     <b id="Sub_zero" style="color: blue;">Golpes sofridos:0</b>
+
+     <img onclick="Ataque_Scorpion()" src="https://moodle.digitalschool.com.br/pluginfile.php/3753/mod_page/content/2/image%20%281%29.png" style="height: 300px; width:300px; float: right;"><br>
+     <b id="Scorpion" style="color: darkgoldenrod;">Golpes sofridos:0</b>
+
+    </div>
+
+
+    
+  
+</body>
+</html>
+<script>
+
+   
+ function começo_de_jogo() {
+     
+ começo_da_luta.style.display= 'block';
+     alert("Round 1 Fight!!");   
+}
+  var Golpes_subzero= 0;
+     
+ function Ataque_subzero() {
+   
+    Golpes_subzero ++;
+    Sub_zero.innerHTML= Golpes_subzero
+}
+  var Golpes_scorpion= 0;
+ 
+ function Ataque_Scorpion() {
+   
+    Golpes_scorpion ++;
+    Scorpion.innerHTML= Golpes_scorpion
+}
+</script>

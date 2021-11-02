@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 11 com 12</title>
+</head>
+<body>
+
+   Valor guardado no Cofrinho = <b id="idValor"> R$0,00 </b>
+    <br> <br>
+
+    Quantidade de Depositos Feitos =
+     <b id="depositos_feitos">0</b> <br> <br>
+    Quantidade de Retiradas Feitas = 
+     <b id="depositos_retirados">0</b> <br> <br>
+
+    <input id="ipt_cofrinho" type="text" placeholder="QUANTIDADE">
+    <br> <br>
+
+    <button onclick="Depositos()"> Depositar </button>
+    <button onclick="RetirarB()"> Retirar a Grana </button>
+
+    
+</body>
+</html>
+
+<script>
+ var ax_Grana = 0;
+ var depositos_dinheiro = 0;
+ var retirar_grana = 0;
+
+ function Depositos() {
+     
+ ax_Grana += Number(ipt_cofrinho.value)
+ idValor.innerHTML = ax_Grana;
+ ipt_cofrinho.value = "";
+ depositos_dinheiro ++;
+ depositos_feitos.innerHTML = depositos_dinheiro;
+
+}
+
+function RetirarB() {
+  ax_Grana = 0;
+  idValor = 0;
+  retirar_grana ++;
+  depositos_retirados.innerHTML = retirar_grana;
+    
+
+}
+
+
+
+</script>

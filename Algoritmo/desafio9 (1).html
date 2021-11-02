@@ -1,0 +1,118 @@
+    <!--Criar um mini museu de exemplares de animais(classificados em ovíparos e mamíferos), 
+    usando combo box, e estrutura if/else-->
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WVCAO</title>
+    </head>
+    <body>
+        <h1>Web venda clandestininha de animaisisinhos online</h1>
+        <div id="div_select1" style="display: block;">
+            <select onchange="surgir_animais()" id="select1">
+                <option value="01">Escolha uma espécie</option>
+                <option value="02">Ovíparos</option>
+                <option value="03">Mamíferos</option>
+            </select>
+        </div>
+        <div id="div_oviparos" style="display: none;">
+            <select onchange="surgir_oviparos()" id="select_oviparos">
+                <option value="00">Escolha o animal</option>
+                <option value="01">Galinha</option>
+                <option value="02">Peixe</option>
+                <option value="03">Tartaruga</option>
+            </select>
+        </div>
+        <div id="div_mamiferos" style="display: none;">
+            <select onchange="surgir_mamiferos()" id="select_mamiferos">
+                <option value="00">Escolha o animal</option>
+                <option value="01">Elefante</option>
+                <option value="02">Porco</option>
+                <option value="03">Coelho</option>
+            </select>
+                
+        </div> <br><br>
+
+        <img style="width: 500px;" id="id_imagem_animal" src=" " alt=""> <br>
+
+        <div id="div_preco_imposto" style="display: none;">
+            <h2>Calcular valor e impostos da compra</h2>
+            Insira o preço que pagará por cada animal: <br>
+            <input id="input_preco" placeholder="Insira o preço aqui"> <br>
+            Insira a quantidade de animais que você irá comprar: <br>
+            <input id="input_quantidade" placeholder="Insira a quantidade aqui"> <br>
+            <button onclick="calculo_total()">Calcular o total</button> <br><br>
+            <div id="mensagem_final"> </div>
+        </div>
+
+    </body>
+    </html>
+    <script>
+        function surgir_animais(){
+            var valor_especie = select1.value;
+
+            if (valor_especie == 01){
+                div_oviparos.style.display = "none";
+                div_mamiferos.style.display = "none";
+                div_preco_imposto.style.display = "none";
+            }
+            if (valor_especie == 02){
+                div_oviparos.style.display = "block";
+                div_mamiferos.style.display = "none";
+                div_preco_imposto.style.display = "block";
+            }
+            if (valor_especie == 03){
+                div_oviparos.style.display = "none";
+                div_mamiferos.style.display = "block";
+            }
+             
+        }
+        function surgir_oviparos(){
+            var valor_oviparos = select_oviparos.value;
+            if (valor_oviparos == 01){
+                id_imagem_animal.src = "https://aventurasnahistoria.uol.com.br/media/_versions/galinharicajjajjda_widexl.jpg";
+            }
+            if (valor_oviparos == 02){
+               id_imagem_animal.src = "https://blog.sansuy.com.br/wp-content/uploads/2017/08/Veja-qual-o-peixe-mais-produzido-no-Brasil-768x542.jpg"; 
+            }
+            if (valor_oviparos == 03) {
+                id_imagem_animal.src = "https://cdn.diferenca.com/imagens/tartaruga-marinha-cke.jpg";
+            }
+            if (valor_oviparos == 00){
+                id_imagem_animal.src = " ";
+            }
+
+        }
+        function surgir_mamiferos(){
+            var valor_mamiferos = select_mamiferos.value;
+            if (valor_mamiferos == 01){
+                id_imagem_animal.src = "https://static.biologianet.com/2020/05/elefante-africano.jpg";
+            }
+            if (valor_mamiferos == 02){
+                id_imagem_animal.src = "https://super.abril.com.br/wp-content/uploads/2021/05/porquinho_site.jpg?quality=70&strip=info&w=680&h=453&crop=1";        
+            }
+            if (valor_mamiferos == 03){
+                id_imagem_animal.src = "https://www.dicaspetz.com.br/wp-content/uploads/2021/02/com-quantos-dias-os-filhotes-de-coelhos-comecam-a-comer-roedores.jpg";
+            }
+            if (valor_mamiferos == 00){
+                id_imagem_animal.src = " ";
+            }
+        }
+        function calculo_total(){
+            var valor_especie = select1.value;
+            var preco = Number(input_preco.value);
+            var quantidade = Number(input_quantidade.value);
+            var valor_final = preco * quantidade;
+            var imposto_oviparo = 0.05;
+            var imposto_mamifero = 0.10;
+
+            if (valor_especie == 02){
+                mensagem_final.innerHTML = `Você pagará R$${(valor_final + (valor_final * imposto_oviparo)).toFixed(2)}, sendo que R$ ${(valor_final * imposto_oviparo).toFixed(2)} será imposto.`; 
+            }
+            if (valor_especie == 03){
+                mensagem_final.innerHTML = `Você pagará R$${(valor_final + (valor_final * imposto_mamifero)).toFixed(2)}, sendo que R$ ${(valor_final * imposto_mamifero).toFixed(2)} será imposto.`;
+            }
+        }
+    </script>

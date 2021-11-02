@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 22</title>
+</head>
+<body>
+    <div id="pt1" style="display: block;">
+    Quantidade solicitada? <input type="text" id="ipt_qtd" placeholder="maior que 10 e menor que 50">
+    <br> <br>
+    <!-- caso contrário emitir mensagem explicativa -->
+    Divido por quantos? <input type="text" id="ipt_div" placeholder="entre 1 e 10">
+    <br> <br>
+    <!-- caso contrário emitir mensagem explicativa -->
+    <button onclick="sortear()">Sortear</button>
+    </div>
+
+    <div style="display: none;" id="pt2">
+    <button onclick="voltar()">Voltar</button>
+    </div>
+
+    <span id="msg"></span>
+</body>
+</html>
+
+<script>
+    function sortear() {
+   var ax_qtd = Number(ipt_qtd.value);
+   var ax_div = Number(ipt_div.value);
+   var random = Math.random();
+   var contador = 0;
+   
+   if (ax_qtd < 10 || ax_qtd > 50) {
+       alert ('Erro 200')
+       pt1.style.display = "block"
+       pt2.style.display = "none" } 
+
+       else if (ax_div < 1 || ax_div > 10) {
+        alert ('Erro 201')
+        pt1.style.display = "block"
+        pt2.style.display = "none" }
+
+     while (contador <= ax_qtd) {
+         if (ax_qtd % ax_div == 0){
+             msg.innerHTML += `${(random * 100).toFixed(0)} <br>`
+         contador++}
+     }
+   }
+</script>

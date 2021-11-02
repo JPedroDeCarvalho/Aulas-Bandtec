@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor guardado no cofrinho: <b id="Valor">R$ 0,00</b> 
+    <br><br><br>
+    Quantidade de depósitos feitos : <b id="depósitos_feitos">0</b> <br> <br>
+    Quantidade de retiradas feitas : <b id="depósitos_retirados">0</b> <br> <br>
+
+
+    <input id="valor_do_cofrinho" placeholder="dinheiro">
+    
+    <br><br>
+
+    <button onclick="Depositar_dinheiro()">Depositar</button><br><br>
+    <button onclick="Retirar_dinheiro()">Tirar toda a grana</button><br><br>
+    
+
+
+</body>
+</html>
+<script>
+ var ax_Dinheiro = 0;
+ var depositar_o_dinheiro = 0;
+ 
+ function Depositar_dinheiro() {
+ 
+  ax_Dinheiro += Number(valor_do_cofrinho.value);
+ 
+  Valor.innerHTML = ax_Dinheiro
+ 
+  valor_do_cofrinho.value = "";
+    
+  depositar_o_dinheiro  ++;
+
+  depósitos_feitos.innerHTML = depositar_o_dinheiro;    
+
+}
+ var retirar_o_dinheiro = 0;
+
+ function Retirar_dinheiro() {
+        
+ ax_Dinheiro = 0;
+        
+ Valor.innerHTML= 0;
+
+ retirar_o_dinheiro  ++;
+         
+ depósitos_retirados.innerHTML = retirar_o_dinheiro;  
+
+}        
+</script>

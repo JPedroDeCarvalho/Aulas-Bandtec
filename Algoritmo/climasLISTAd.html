@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climas</title>
+</head>
+<body>
+    <div>
+    <select id="Select_Climas" onchange="Clima()"> <br> <br>
+
+<option value="">Estações do Ano</option> <br> <br>
+<option value="https://tribunadejundiai.com.br/wp-content/uploads/2020/09/primavera-patricia-silva-1.jpg" style="height: 200px; float: left;" >Primavera</option>
+<option value="https://www.prosaude.org.br/wp-content/uploads/2021/07/Verao.jpg" style="height: 200px; float: left;">Verão</option>
+<option value="https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/11/folhas.jpg" style ="height: 200px; float: left;">Outono</option>
+<option value="https://www.infoescola.com/wp-content/uploads/2008/10/inverno.jpg" style="height: 200px; float: left;">Inverno</option>
+
+    </select>
+    </div>
+    
+    <img id="img_climas" style="width: 200px;">
+
+</body> 
+</html>
+<script>
+function Clima() {
+    img_climas.src= Select_Climas.value;
+}
+</script>

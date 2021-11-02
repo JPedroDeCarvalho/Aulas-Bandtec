@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova de Algoritmo</title>
+</head>
+<body>
+    <!--Nome: Augusto Henrique Souza Ribeiro Silva - RA: 01212145--->
+    <h1 style="font-style:oblique ; color: darkblue;"><u>Venda de Carros</u></h1>
+    - <b style="font-style: oblique; color: rgb(28, 124, 219);"><u>Subaru Impreza 22B STI</u> </b> - <br><br>
+    <img style="height: 150px; float: left;" src="https://www.planetcarsz.com/assets/uploads/SUBARU%20IMPREZA%2022B%20STI%201998%2001.jpg" alt=""><br><br><br><br><br><br><br><br><br>
+    Valor do carro: <input id="valor_carro" type="text" placeholder="Insira o valor do veículo"><br><br>
+    Número de parcelas desejadas: <input id="parcelas_carro" type="text" placeholder="Insira o número de parcelas desejadas"><br><br>
+    - <b style="font-style: oblique; color: rgb(28, 124, 219);"><u>Yamaha XRJ 1300</u></b> - <br><br>
+    <img style="height: 150px; float: left;" src="https://bestcars.com.br/bc/wp-content/uploads/2014/09/2015-Yamaha-XJR1300-01.jpg" alt=""><br><br><br><br><br><br><br><br><br>
+    Valor da moto: <input id="valor_moto" type="text" placeholder="Insira o valor da moto"><br><br>
+    Número de parcelas desejadas: <input id="parcelas_moto" type="text" placeholder="Insiro o número de parcelas desejadas"><br><br>
+    <button onclick="simulacao()">Simular compra</button>
+    <div id="div_valor"></div>
+</body>
+</html>
+<script>function simulacao(){
+    var total = Number(valor_carro.value) + Number(valor_moto.value)
+    var prestação_carro = parcelas_carro.value
+    var prestação_moto = parcelas_moto.value
+    div_valor.innerHTML = `<br><u>ANÁLISE DOS VALORES DE COMPRA</u><br>
+    O valor <b>total</b> dos veículos é: <b>R$${total}</b><br>
+    O carro representa <b>${valor_carro.value/total*100}</b>% do valor total dos veiculos e a moto <b>${valor_moto.value/total*100}</b>%<br><br>
+    <u>ANÁLISE DAS PRESTAÇÕES</u><br>
+    O <span style="background-color: rgb(0, 174, 255); width: 50px;"><b>carro</b></span> será pago em <span style="color: rgb(0, 174, 255);"><b>${prestação_carro}</b></span> meses e cada parcela será de <span style="color: rgb(0, 174, 255);">R$<b>${valor_carro.value/prestação_carro}</b></span><br>
+    A <span style="background-color: rgb(17, 233, 17);"><b>moto</b></span> será paga em <span style="color: rgb(17, 233, 17);"><b>${prestação_moto}</b></span> meses e cada parcela será de <span style="color: rgb(17, 233, 17);">R$<b>${valor_moto.value/prestação_moto}</b></span><br>
+    A soma total das parcelas mensais é de R$<b>${Number(valor_carro.value/prestação_carro) + Number(valor_moto.value/prestação_moto)}</b><br>
+    <br><img style="height: 150px;" src="https://blog.proteautobrasil.com.br/wp-content/uploads/2018/01/96528-associacao-de-protecao-veicular-como-e-feito-o-calculo-do-valor.jpg" alt="">`}
+</script>

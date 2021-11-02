@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALÁRIO</title>
+</head>
+<body>
+    Salário Total: <input id="salario" type="text" placeholder="Ex:2000..."> <br>
+
+    <button onclick="Calculo()"> Calcular descontos!</button> <br><br>
+
+
+    <div id="Inss"></div> 
+    <div id="Ir"></div>
+    <div id="Desconto"></div>
+    <div id="Final"></div>
+
+
+
+</body>
+</html>
+
+<script>
+
+
+function Calculo() {
+
+    var ax_Inss = Number(salario.value * 0.1);
+    var ax_Ir = Number(salario.value * 0.2);
+    var ax_Desconto = Number(ax_Inss + ax_Ir);
+    var ax_Total = Number(salario.value - ax_Desconto);
+
+    Inss.innerHTML = `Seus descontos serão de... <br>
+
+    INSS: R$${ax_Inss} <br>
+
+    IR: R$${ax_Ir} <br>
+    
+    Total dos descontos: R$${ax_Desconto} <br>
+
+    Descontos do Salário: R$${ax_Total}`
+}
+
+
+
+</script>

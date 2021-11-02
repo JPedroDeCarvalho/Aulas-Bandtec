@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15 random</title>
+</head>
+<body>
+    <h3>Exercicio 15</h3>
+
+    <div>Numeros pares: <div id="n_par">0</div></div> <br>
+    <div>Numeros ímpares: <div id="n_impar">0</div></div> <br>
+
+    <button onclick="bt_sorte()">Sortear Número</button>
+
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+
+var ax_cont = 0;
+
+  function bt_sorte() {
+
+var ax_num = Math.random()
+var numero = (ax_num*-21-9).toFixed()
+
+  div_msg.innerHTML= numero;
+
+        if(numero %2) {
+          ax_cont ++;
+          n_impar.innerHTML = ax_cont; 
+        }
+        else {
+            ax_cont ++;
+        n_par.innerHTML = ax_cont;
+            
+        }
+}
+</script>

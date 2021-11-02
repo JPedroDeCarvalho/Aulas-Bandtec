@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerc 22 while</title>
+</head>
+<body>
+
+    <div style="display: block" id="pt1">
+        
+        Quantidade solicitada? <input id="ipt_qtd" placeholder="10 a 50"> <br> <br>
+
+        Divido por quantos? <input id="ipt_div" placeholder="1 a 10"> <br> <br>
+
+        <button onclick="bt()">Sortear</button> <br>
+
+    </div>
+
+    <div style="display: none" id="pt2">
+
+        O maior número sorteado foi: <b id="max">0</b><br>
+
+        O menor número sorteado foi: <b id="min">0</b><br> 
+
+        A média de todos os números sorteados é: <b id="media">0</b> <br> <br>
+
+        <button onclick="voltar()">Reiniciar</button>
+        <div id="msg"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var ax_num = 0;
+    var ax_div = 0;
+    var contador = 0;
+    var sorteio = 0;
+    var ax_max = 0;
+    var ax_min = 100;
+    var ax_med = 0;
+
+    function bt() {
+
+        msg.innerHTML = ''
+
+       if (ipt_qtd.value < 10 || ipt_qtd.value > 50) {
+       alert ('Erro 200')
+       pt1.style.display = "block"
+       pt2.style.display = "none" } 
+
+       else if (ipt_div.value < 1 || ipt_div.value > 10) {
+        alert ('Erro 201')
+        pt1.style.display = "block"
+        pt2.style.display = "none" }
+
+        if (ipt_qtd.value > 10 && ipt_div.value < 50) {
+
+            pt1.style.display = 'none'
+            pt2.style.display = 'block'
+            ax_num = ipt_qtd.value
+            ax_div = ipt_div.value
+
+        while (contador < ax_num) {
+            sorteio = Number ((Math.random() * 100).toFixed(0))
+            ax_med += sorteio
+        if (sorteio > ax_max) {
+            ax_max = sorteio  
+        }
+        if (sorteio < ax_min) {
+            ax_min = sorteio  
+        }
+        if (sorteio % ipt_div.value == 0) {
+            msg.innerHTML += `<br> <span style="color: red"> ${sorteio} </span>`
+        }
+        else {
+            msg.innerHTML += `<br> ${sorteio}`
+        }
+contador ++
+            }
+
+        min.innerHTML = `${ax_min}`
+        max.innerHTML = `${ax_max}`
+        media.innerHTML = `${(ax_med / ipt_qtd.value).toFixed(1)}`
+
+        }
+    }
+
+    function voltar() {
+
+        var ax_num = 0;
+        var ax_div = 0;
+        var contador = 0;
+        var sorteio = 0;
+        var ax_max = 0;
+        var ax_min = 100;
+        var ax_med = 0;
+
+        msg.innerHTML = ''
+
+        ipt_qtd.value = ''
+        ipt_div.value = ''
+        
+        min.innerHTML = ''
+        max.innerHTML = ''
+        media.innerHTML = ''
+
+        pt1.style.display = 'block';
+        pt2.style.display = 'none';
+
+        // erro ao zerar programa, não soube consertar.
+    }
+
+</script>

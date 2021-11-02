@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUTA</title>
+</head>
+<body> 
+    <button onclick="iniciarluta()"> Iniciar Luta </button>
+    <div id="começarluta" style="display: none;" >
+    
+        <img onclick="Scorpion()" src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/afa98880e0dbc568e7f57c3be4f7124489f6f4e00a254cc6710c0fbf8903c2dd._RI_V_TTW_.jpg" style="height: 300px; width: 300px; float: left">
+         
+       <img onclick="Subzero()" src="https://static.wikia.nocookie.net/moviemorgue/images/a/af/Subzero_legends.jpg/revision/latest?cb=20201010211306" style="height: 300px; width: 300px; float: right;">
+         
+      
+
+       <b id="Scorpion01" style="color: orange; float: left;"> <h1> Golpes Sofridos:</h1> </b>  <br> 
+       <b id="Subzero01" style="color: blue; float: right;"> <h1> Golpes Sofridos:</h1> </b> <br>
+
+       <div id="vida_scorpion" style="background-color: orange;width: 0; float: left;" > . </div>
+       <div id="vida_subzero" style="background-color: blue;width: 0; float: right;" > . </div>
+
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+function iniciarluta() {
+    começarluta.style.display = "block";
+}
+var golpesScorpion = 0;
+var golpesSubzero = 0;
+var vidaScorpion01 = 25;
+var vidaSubzero01 = 25;
+
+
+
+function Scorpion() {
+    golpesScorpion ++
+    Scorpion01.innerHTML= golpesScorpion
+
+    vida_scorpion.style.width = `   ${vidaScorpion01.toFixed(0)}%   `
+    
+    golpesScorpion -= `   ${vidaSubzero01.toFixed(0)}%   `
+}
+
+
+function Subzero() {
+    golpesSubzero ++
+    Subzero01.innerHTML= golpesSubzero
+
+    vida_subzero.style.width = `   ${vidaSubzero01.toFixed(0)}%   `
+
+    golpesSubzero -= `   ${vidaScorpion01.toFixed(0)}%   `
+}
+
+
+</script>
+
+<!-- Não consegui completar o Exercicio-->

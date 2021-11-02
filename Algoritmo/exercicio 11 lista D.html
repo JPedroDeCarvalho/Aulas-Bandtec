@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    O saldo do cofrinho é de:<b id="valor_cofrinho">R$ 00,00</b> <br> <br>
+    A quantidade de operação foi:<b id="valor_operacao">0</b> <br> <br>
+    Média dos despositos:<b id="valor_depósito">R$ 00,00</b> <br> <br>
+
+    <button onclick="depositar()">Depositar</button><br><br><br>
+    <button onclick="gastar_a_grana()">Gastar a grana</button><br><br><br>
+
+    <div>
+
+        <select id="cofrinho1">
+    
+         <option value="">valores atuais da moeda</option>
+         <option value="R$ 0,05">R$ 0,05</option>
+         <option value="R$ 0,10">R$ 0,10</option>
+         <option value="R$ 0,25">R$ 0,25</option>
+         <option value="R$ 0,50">R$ 0,50</option>
+         <option value="R$ 1,00">R$ 1</option>
+         <option value="R$ 2,00">R$ 2</option>
+         <option value="R$ 5,00">R$ 5</option>
+         <option value="R$ 10,00">R$ 10</option>
+         <option value="R$ 20,00">R$ 20</option>
+         <option value="R$ 50,00">R$ 50</option>
+         <option value="R$ 100,00">R$ 100</option>
+         <option value="R$ 200,00">R$ 200</option>
+    
+        </select>
+        </div>
+        <div id="div_calculo"></div>
+
+        
+
+       
+    
+    
+</body>
+</html>
+<script>
+ var ax_Dinheiro2 = 0;
+
+ var ax_Dinheiro = 0;
+
+ var depositar_o_dinheiro = 0;
+
+ function depositar(){
+
+ ax_Dinheiro = cofrinho1.value;
+    
+ valor_cofrinho.innerHTML = ax_Dinheiro;
+
+ valor_cofrinho.value = "";
+
+ depositar_o_dinheiro  ++;
+
+ valor_operacao.innerHTML = depositar_o_dinheiro;
+
+ ax_Dinheiro2 ++;
+
+ valor_depósito.innerHTML = `<b>R$:</b>${ax_Dinheiro2.toFixed(2)}`;
+
+}
+ var zero= 0;
+
+ var zero1= 0;
+ 
+ var retirar_o_dinheiro = 0;
+
+ function gastar_a_grana(){
+ 
+  valor_operacao.innerHTML= zero;
+
+  valor_depósito.innerHTML= zero1;
+
+  valor_cofrinho.innerHTML= retirar_o_dinheiro;
+ }
+
+
+
+
+</script>

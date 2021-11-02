@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGON BALL Z</title>
+</head>
+<body>
+    KI de um Sayajin: <input id="kibase" type="text" placeholder="Ex:8000..."> <br> <br>
+   <b> Transformar em... </b> <br>
+   <button id="SSj" onclick="ssj()" style="float: left;">Super Sayajin</button>
+
+   <button id="SSj2" onclick="ssj2()" style="float: left;">Super Sayajin 2</button>
+
+   <button id="SSj3" onclick="ssj3()" style="float: left;">Super Sayajin 3</button>
+
+   <button id="SSj4" onclick="ssj4()" style="display: none;">Super Sayajin 4</button> <br><br>
+
+   <div id="transformaçao"></div> <br><br>
+   <img id="superj" style="height: 470px;" src="" alt="">
+ 
+
+</body>
+</html>
+
+<script>
+    
+function ssj() {
+    var ssj = Number(kibase.value * 50) 
+    SSj4.style.display = 'none'
+    transformaçao.innerHTML = `Transformação em ${SSj.innerHTML}, o KI desse Sayajin passa a ser de ${ssj}`
+   superj.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4805bb10-2561-4f69-b899-a4f774a82de4/de5wfsk-434e6ef2-c164-4d3d-9653-82ca7f43fe87.png/v1/fill/w_1920,h_2560,strp/goku__namek_saga__ssj___1_by_ssjrose890_de5wfsk-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjU2MCIsInBhdGgiOiJcL2ZcLzQ4MDViYjEwLTI1NjEtNGY2OS1iODk5LWE0Zjc3NGE4MmRlNFwvZGU1d2Zzay00MzRlNmVmMi1jMTY0LTRkM2QtOTY1My04MmNhN2Y0M2ZlODcucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.ZHsR3OyPjbRLXDhWxgrzYAXj0uMVztuR7HXRKVs6ghg'
+}
+
+function ssj2() {
+    var ssj2 = Number(kibase.value * 100) 
+    SSj4.style.display = 'none'
+    superj.src = 'https://image.pngaaa.com/895/2025895-middle.png'
+    transformaçao.innerHTML = `Transformação em ${SSj2.innerHTML}, o KI desse Sayajin passa a ser de ${ssj2}`
+}
+
+function ssj3() {
+    var ssj3 = Number(kibase.value * 200) 
+    SSj4.style.display = 'block'
+    superj.src = 'https://image.pngaaa.com/852/1461852-middle.png'
+    transformaçao.innerHTML = `Transformação em ${SSj3.innerHTML}, o KI desse Sayajin passa a ser de ${ssj3}`
+}
+
+function ssj4() {
+    var ssj4 = Number(kibase.value * 5000) 
+    superj.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/ddjzjym-8c0cba10-c375-4624-864f-5961a2aca22e.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGRqemp5bS04YzBjYmExMC1jMzc1LTQ2MjQtODY0Zi01OTYxYTJhY2EyMmUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.QEWKEKhN6lFhCjkhPZuEgIiGDN1zwAvs0ivW2Opyfso'
+    transformaçao.innerHTML = `Transformação em ${SSj4.innerHTML}, o KI desse Sayajin passa a ser de ${ssj4}`
+}
+
+
+</script>   

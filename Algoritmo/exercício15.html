@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleições</title>
+
+<h3>Quantidade de votos Lula    <input id="vt_lula" type="text" placeholder="insira os votos do Lula"> </h3>
+<h3>Quantidade de votos Bolsonaro  <input id="vt_bolso" type="text" placeholder="insira os votos do Bolsonaro"> </h3>
+<h3>Quantidade de votos brancos  <input id="vt_brancos" type="text" placeholder="insira os votos brancos"> </h3>
+<h3>Quantidade de votos nulos  <input id="vt_nulos" type="text" placeholder="insira os votos nulos"> </h3><br>
+
+<button id="bt_resultado" onclick="resultado()">Resultado da Eleição </button><br><br><br>  
+
+<div id="div_resultado"> </div><br>
+<div id="div_lula" > </div>
+<div id="tamanho_lula" style="background-color: red;width: 0;" >.</div>
+<div id="div_bolsonaro"> </div>
+<div id="tamanho_bolsonaro" style="background-color: green;width: 0;" >.</div>
+<div id="div_invalidos" > </div>
+<div id="tamanho_invalido" style="background-color: grey;width: 0;" >.</div>
+
+
+
+
+</head>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+<script>
+
+function resultado(){
+
+
+    var lulas = vt_lula.value;
+    var bolso = vt_bolso.value;
+    var invalidos = Number(vt_brancos.value) + Number(vt_nulos.value);
+    var totalvt = invalidos + Number(lulas)  + Number(bolso)
+    var plula = 100- ( invalidos/totalvt *100) -(bolso/totalvt *100 ); 
+    var pbolso = 100- ( invalidos /totalvt *100 ) - (lulas/totalvt *100); 
+    var pinvalidos =  100- ( bolso/totalvt *100) - (lulas/totalvt * 100);
+     
+ 
+ 
+    div_resultado.innerHTML = `<b>Total de votos <u>${totalvt}<b></u><br>`
+    div_lula.innerHTML = `<b>Lula:</b> ${plula.toFixed(0)}% (${lulas} votos)<br>`
+    div_bolsonaro.innerHTML = `<b>Bolsonaro:</b>${pbolso.toFixed(0)}% (${bolso} votos)<br> `
+    div_invalidos.innerHTML = `<b>Inválidos:</b>${pinvalidos.toFixed(0)}% (${invalidos} votos) `
+
+    tamanho_lula.style.width = `   ${plula.toFixed(0)}%   `
+    tamanho_bolsonaro.style.width = `${pbolso.toFixed(0)}% `
+    tamanho_invalido.style.width = `  ${pinvalidos.toFixed(0)}%   `
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+</script>

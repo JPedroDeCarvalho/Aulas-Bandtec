@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Break</title>
+</head>
+<body>
+    <!-- JP -->
+    <button onclick="bt()">Ver minha sorte</button> <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+
+
+<script>
+
+    var cartas = 0;
+    var coracao = 0;
+    var sorte = 0;
+    var contador = 0;
+    
+    function bt() {
+        
+    cartas = 0;
+    coracao = 0;
+    sorte = 0;
+    contador = 0;
+
+        msg.innerHTML = ''
+
+        while (contador <= 21) {
+            sorte = Number((Math.random() * 1).toFixed())
+            if (sorte == 0 ) {
+            coracao ++;
+        msg.innerHTML += `<img src="https://cdn-icons-png.flaticon.com/512/181/181527.png" width="40px">              `
+         } 
+        else {
+        cartas ++;
+            msg.innerHTML += `<img src="https://cdn-icons-png.flaticon.com/512/72/72261.png" width="40px">            `
+            }
+        if (cartas == 11) {
+            msg.innerHTML += `<h2> <br> Você tem mais sorte no <b> Jogo! </b> </h2>`;
+            break
+        }
+        if (coracao == 11) {
+            msg.innerHTML += `<h2> <br> Você tem mais sorte no Amor! </b> </h2>`;
+            break
+        }
+        contador ++;
+        }
+    }
+</script>

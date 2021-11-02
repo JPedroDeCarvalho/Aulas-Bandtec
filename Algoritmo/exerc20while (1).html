@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 20 while</title>
+</head>
+<body>
+    <button onclick="botao()">3 & 5</button>
+    <div id="msg"></div>
+</body>
+</html>
+
+<script>
+var contador = 0; 
+    function botao() {
+        while (contador <= 100) {
+            contador++;
+            if (contador %3 == 0) {
+               msg.innerHTML += `<BR> <span style="color: green;"> É TRI!!! <\span>`
+            } else if (contador %5 == 0) {
+                msg.innerHTML += `<BR> <span style="color: yellow;"> É PENTA!!!!! <\span>`
+            } else if (contador %3 == 0 && contador %5 == 0) {
+                msg.innerHTML += `<br> <span style="color: green;"> É TRI!!!, <span style="color: yellow;"> É PENTA!!!!! <\span> <\span>`
+            } else {msg.innerHTML += `<br> <span style="color: blue;"> - ${contador} <\span>`}
+         }
+    } 
+</script>

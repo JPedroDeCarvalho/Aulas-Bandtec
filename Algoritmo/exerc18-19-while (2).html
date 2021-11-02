@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19</title>
+</head>
+<body>
+Quantos Onibus? <input type="text" placeholder="Quantos Onibus" id="ipt_oni"> <br>
+Quantos Trem? <input type="text" placeholder="Quantos Trem" id="ipt_trem"> <br>
+Quantos metrôs? <input type="text" placeholder="Quantos metrôs" id="ipt_metro"> <br>
+<button onclick="bt()">#Partiu Trajeto</button> <br>
+<div id="div_msg"></div>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+    
+    var ax_onibus = 1;
+    var ax_trem = 1;
+    var ax_metro = 1;
+
+function bt() {
+    var onibus = ipt_oni.value;
+    var trem = ipt_trem.value;
+    var metro = ipt_metro.value;
+
+    while (ax_onibus <= onibus) {
+        div_msg.innerHTML += `<div style="color: red;">Pegando o ${ax_onibus}º Buzão <br> </div>`
+   if (ax_onibus == 2) {
+    div_msg.innerHTML += `<span  style="color: red;"><b> Começando a Cansar </b> </span>` }
+   if (ax_onibus == 3) {
+    div_msg.innerHTML += `<span  style="color: red;"><b> Ja Cansado </b> </span>` }
+    ++ax_onibus}
+
+
+    while (ax_trem <= trem) {
+        div_msg.innerHTML += `<div style="color: green;">Pegando o ${ax_trem}º Trem <br></div>`
+
+        if (ax_trem == 2) {
+       div_msg.innerHTML += `<span  style="color: green;"> <b> Começando a Cansar </b> </span>` }
+   if (ax_trem == 3) {
+       div_msg.innerHTML += `<span  style="color: green;"><b> Ja Cansado </b> </span>`}
+    ++ax_trem}
+
+
+    while (ax_metro <= metro) {
+        div_msg.innerHTML += `<div style="color: blue;">Pegando o ${ax_metro}º Metro <br></div>`
+        if (ax_metro == 2) {
+        div_msg.innerHTML += `<span style="color: blue;"><b> Começando a Cansar </b> </span>` }
+       if (ax_metro == 3) {
+        div_msg.innerHTML += `<span  style="color: blue;"> <b> Ja Cansado </b> </span>`}
+    ++ax_metro}
+}
+</script>

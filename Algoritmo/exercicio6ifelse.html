@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <center> 
+
+    <h2>TEMPERATURA IDEAL PARA CONSERVA DE ALIMENTOS</h2>
+
+    Insira a Temperatura do Ambiente: <input id="ipt_temp"> <br>
+
+<br>
+
+
+    <button onclick="verificar()">Verificar</button>
+
+<br>
+
+    <div id="div_temp"></div>
+
+    
+
+</center>
+
+
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        if (ipt_temp.value < 10){
+            div_temp.innerHTML = 'Apropriada para conservar o alimento <br> <img src="https://www.cozinhandopara2ou1.com.br/wp-content/uploads/2017/03/fruits.jpg" height="400px" width="400px">';
+        } else {
+            div_temp.innerHTML = 'Inapropriada para conversar o alimento <br> <img src="https://pt.toluna.com/dpolls_images/2019/08/03/7c99fb67-2b8d-4207-9bf9-a32c887c228e_x365.jpg" height="400px" width="400px">'
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+</script>

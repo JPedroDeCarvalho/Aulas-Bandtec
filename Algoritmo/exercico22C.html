@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTREGAS</title>
+</head>
+<body>
+    <h2>ENTREGAS</h2>
+
+    <div id="IDentregas" style="display: block;">
+
+
+    <input id="ipt_zl" type="text" placeholder="Zona leste"> <br> <br>
+    <input id="ipt_zs" type="text" placeholder="Zona Sul"> <br> <br>
+    <input id="ipt_zn" type="text" placeholder="Zona Norte"> <br> <br>
+    <input id="ipt_zo" type="text" placeholder="Zona Oeste"> <br> <br>
+
+
+    <button onclick="Carregar()">Carregar Agenda</button>
+  </div>
+
+  <div id="id_msg"> </div>
+
+  
+    <button id="etg_ZL" onclick="entregaZL()" style="display: none;">ZONA LESTE</button>
+    <button id="etg_ZS" onclick="entregaZS()" style="display: none;">ZONA SUL</button>
+    <button id="etg_ZN" onclick="entregaZN()" style="display: none;">ZONA NORTE</button>
+    <button id="etg_ZO" onclick="entregaZO()" style="display: none;">ZONA OESTE</button>
+
+
+   <div id="zonalesteID"></div>
+   <div id="zonasulID"></div>
+   <div id="zonanorteID"></div>
+   <div id="zonaoesteID"></div>
+   <div id="totalID"></div>
+
+
+</body>
+</html>
+
+<script>
+var ax_ZL = 0;
+var ax_ZS = 0;
+var ax_ZN = 0;
+var ax_ZO = 0;
+
+
+function Carregar() {
+
+    var ax_ZL = Number (ipt_zl.value);
+    var ax_ZS = Number (ipt_zs.value);
+    var ax_ZN = Number (ipt_zn.value);
+    var ax_ZO = Number (ipt_zo.value);
+
+
+
+    IDentregas.style.display = "none"
+
+     etg_ZL.style.display = "block";
+     etg_ZS.style.display = "block";    
+     etg_ZN.style.display = "block";
+     etg_ZO.style.display = "block"; 
+
+    zonalesteID.innerHTML = 
+    ` ENTREGAS ZONA LESTE = ${ax_ZL} <br> `
+    zonasulID.innerHTML =
+      ` ENTREGAS ZONA SUL = ${ax_ZS} <br> `
+    zonanorteID.innerHTML = 
+    ` ENTREGAS ZONA NORTE = ${ax_ZN} <br>`
+    zonaoesteID.innerHTML = 
+    ` ENTREGAS ZONA OESTE = ${ax_ZO} <br> `
+    totalID.innerHTML =
+    ` ENTREGAS TOTAIS = ${ax_ZL + ax_ZS + ax_ZN + ax_ZO} <br> <br>`
+
+
+        
+}
+function entregaZL() {
+    ax_ZL = ax_ZL -1
+    zonalesteID.innerHTML = ` ENTREGAS ZONA LESTE = ${ax_ZL}`
+}
+
+
+function entregaZS() {
+    ax_ZS -= 1
+    zonasulID.innerHTML = ` ENTREGAS ZONA SUL = ${ax_ZS} `
+}
+function entregaZN() {
+    ax_ZN -= 1
+    zonanorteID.innerHTML = ` ENTREGAS ZONA NORTE = ${ax_ZN} `
+}
+function entregaZO() {
+    ax_ZO -= 1
+    zonaoesteID.innerHTML = ` ENTREGAS ZONA OESTE = ${ax_ZO} `
+}
+
+
+
+
+</script>

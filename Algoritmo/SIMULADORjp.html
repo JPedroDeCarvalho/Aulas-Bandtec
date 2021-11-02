@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+</head>
+<body>
+    <h1>Simulador Financeiro</h1>
+
+    <input id="ipt_percadepecas" type="text" placeholder="Porcentagem de perda" > <br> <br>
+    <input id="ipt_gastoResfriamento" type="text" placeholder="Gastos com resfriamentos"> <br> <br>
+    <input id="ipt_perdademateriais" type="text" placeholder="Porcentagem de perda" > <br> <br>
+    <input id="ipt_tempodeOperacoes" type="text" placeholder="Tempo de operação"> <br><br>
+
+    <button onclick="calcular()">Calcular</button> <br> <br>
+
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+
+<script>
+function calcular(){
+
+var perdaMateriais = Number(ipt_perdademateriais.value);
+var gastoResfriamento = Number(ipt_gastoResfriamento.value);
+var perdaABS = Number(ipt_percadepecas);
+var tempoOperacao = Number(ipt_tempodeOperacoes.value);
+
+var TempoOperacaoMoonfox = (505) 
+var perdaABSMoonfox = Number('5%')
+var GastosResfriamentoMoonfox =  (600)
+var perdaMateriaisMoonfox =('90%')
+
+
+div_msg.innerHTML =  ` <h3><b>Com os nossos serviços você terá as vantagens</b></h3>
+                       Tempo de operação: ${tempoOperacao - TempoOperacaoMoonfox }<b>horas</b><br>
+                       Percas com ABS diminuirão: ${perdaABS - perdaABSMoonfox }<br>
+                       Você vai enconomizar: R$ ${gastoResfriamento - GastosResfriamentoMoonfox }<br>
+                       Você vai perder: ${perdaMateriais}; <br>` 
+
+}
+
+
+</script>

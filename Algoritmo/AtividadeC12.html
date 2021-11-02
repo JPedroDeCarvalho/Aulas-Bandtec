@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span style="float: left;"> Valor guardado no cofrinho: R$ </span>
+     <div id="val" >0.00</div> 
+     <div>Quantidade de depositos feitos: <b id="feito_deposito">0</b> </div>
+     <div>Quantidade de retiradas feitas: <b id="feito_retirada">0</b> </div>
+    Valor a ser depositado: <input id="deposito" type="text" placeholder="50.00..."> <br>
+    <button style="float: left;" onclick="depositar()">Depositar</button>
+    <button id="gambiarra" onclick="tirar()" style="display: none;">Tirar toda a grana</button> 
+    <button id="huebr" style="display: block;">Tirar toda a grana</button>
+</body>
+</html>
+
+<script>
+
+var soma = 0;
+var dps = 0;
+var dpsmenos =0;
+function depositar() {
+    huebr.style.display = "none";
+    gambiarra.style.display = "block";
+ dps ++;
+ soma = soma + Number(deposito.value);
+
+    val.innerHTML = soma;
+feito_deposito.innerHTML = dps;
+}
+
+
+function tirar() {
+    huebr.style.display = "block";
+    gambiarra.style.display = "none";
+dpsmenos ++;
+    soma = 0;
+var zero = Number(0);
+    val.innerHTML = zero;
+    feito_retirada.innerHTML = dpsmenos;
+}
+
+
+</script> 

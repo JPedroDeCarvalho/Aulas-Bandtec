@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <select id="lista_calculo" onchange="resultado()">
+    
+         <option value="">escolha uma das tabuadas</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+         <option value="7">7</option>
+         <option value="8">8</option>
+         <option value="9">9</option>
+    
+        </select>
+        </div>
+        <div id="div_calculo"></div>
+    
+    
+</body>
+</html>
+<script>
+function resultado(){
+    var ax_tabuada = lista_calculo.value
+    div_calculo.innerHTML= `
+    ${ax_tabuada}X1 = ${ax_tabuada*01} <br>
+    ${ax_tabuada}X2 = ${ax_tabuada*02} <br>
+    ${ax_tabuada}X3 = ${ax_tabuada*03} <br>
+    ${ax_tabuada}X4 = ${ax_tabuada*04} <br>
+    ${ax_tabuada}X5 = ${ax_tabuada*05} <br>
+    ${ax_tabuada}X6 = ${ax_tabuada*06} <br>
+    ${ax_tabuada}X7 = ${ax_tabuada*07} <br>
+    ${ax_tabuada}X8 = ${ax_tabuada*08} <br>
+    ${ax_tabuada}X9 = ${ax_tabuada*09} <br>
+    ${ax_tabuada}X10 = ${ax_tabuada*10} <br>`;
+}
+</script>

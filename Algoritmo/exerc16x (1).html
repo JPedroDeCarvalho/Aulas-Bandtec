@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" ax_content="IE=edge">
+    <meta name="viewport" ax_content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16x random</title>
+</head>
+<body>
+
+    Digite seu Nome = <input id="ipt_nome" type="text" placeholder="Nome..."> <br> <br>
+    Digite o 1 numero = <input id="ipt_sorte1" type="text" placeholder="Numero..."> <br> <br>
+    Digite o 2 numero = <input id="ipt_sorte2" type="text" placeholder="Numero..."> <br> <br>
+    Digite o 3 numero = <input id="ipt_sorte3" type="text" placeholder="Numero..."> <br> <br>
+
+    <button onclick="bt_sortear()">Sortear</button> <br> 
+
+    <div id="div_msg"></div> <br>
+
+</body>
+</html>
+
+<script>
+
+var ax_cont = 0;
+
+    function bt_sortear() {
+
+var ax_aleatorio = Math.random()
+var ax_num = (ax_aleatorio*9+1).toFixed()
+
+        if (ipt_sorte1.value < 1 || ipt_sorte1.value > 10) {
+            alert(`Error`);
+        }else if (ipt_sorte2.value < 1 || ipt_sorte2.value > 10) {
+            alert(`Error`);
+        }else if (ipt_sorte3.value < 1 || ipt_sorte3.value > 10) {
+            alert(`Error`);
+        }
+         else {
+            ax_cont ++;
+            div_msg.innerHTML = `<b> ${ax_num} </b> <br>`; 
+           if (ax_num == ipt_sorte1.value) {
+            alert(`Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_cont} sorteios!`)
+
+           }else if (ax_num == ipt_sorte2.value) {
+            alert(`Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_cont} sorteios!`)
+
+           }else if (ax_num == ipt_sorte3.value) {
+            alert(`Parabéns, ${ipt_nome.value} você foi sorteado(a) após ${ax_cont} sorteios!`)
+           }
+
+        }
+        
+ }
+
+</script>

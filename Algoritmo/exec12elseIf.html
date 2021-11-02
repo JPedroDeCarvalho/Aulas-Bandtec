@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste De Dedo</title>
+</head>
+<body>
+    <center>
+    <h3>Vamos testar esse dedo?</h3>
+
+    Você Ja Clicou <b id="ipt_clique">0</b> Vezes! <br> <br>
+    
+    <button onclick="bt_contar()">Clica Neu</button> <br> <br>
+    <button onclick="bt_atualizar()">Atualizar Contador</button> <br> 
+    
+    <div id="div_msg"></div>
+</center>
+    
+</body>
+</html>
+<script>
+
+var ax_vezes = 0
+
+function bt_contar () {
+
+ax_vezes ++ 
+
+}
+
+function bt_atualizar () {
+
+   ipt_clique.innerHTML= ax_vezes
+
+     if (ax_vezes < 5){
+     div_msg.innerHTML= `<br> <b> Dedo fraquinho, hein! <b> <br>`
+     }
+     else if (ax_vezes > 5 && 10){
+     div_msg.innerHTML= `<br> <b> Dedo bom, mano! <b> <br>`
+     }
+     else if (ax_vezes >11 && 15){
+     div_msg.innerHTML= `<br> <b> Gosta de clicar, hein! <b> <br>`
+     }
+     if (ax_vezes >15){
+     div_msg.innerHTML= `<br> <b> Eita dedo nervoso! <b> <br>` 
+     }
+
+}
+</script>

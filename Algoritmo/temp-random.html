@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos</title>
+</head>
+<body>
+    <button onclick="temp()">Sortear Temperatura</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function temp() {
+var ax_num = Math.random();
+var ax_tempo = (ax_num*40-20).toFixed()
+     if (ax_tempo < 1) {
+         div_msg.innerHTML += `<b> Temp: ${ax_tempo} </b> da pra conservar Alimentos <br> <br>`
+     } else if (ax_tempo <= 10) {
+         div_msg.innerHTML += `<b> Temp: ${ax_tempo} </b> conserva a maioria dos Alimentos <br> <br>`
+     } else if (ax_tempo > 10) {
+         div_msg.innerHTML += `<b> Temp: ${ax_tempo} </b> Estraga a Maioria dos Alimentos <br> <br>`
+     }
+
+
+    }
+</script>

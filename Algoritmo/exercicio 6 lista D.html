@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+    <select id="Lista_de_clima" onchange="climas()">
+
+     <option value="">escolha uma das estações</option>
+     <option value="primavera.jpeg">Primavera</option>
+     <option value="verao.jpeg">Verão</option>
+     <option value="outono.jpeg">Outono</option>
+     <option value="inverno.jpeg">Inverno</option>
+
+    </select>
+    </div>
+    
+    <img id="img_clima" style="width: 200px;">
+
+</body> 
+</html>
+<script>
+function climas() {
+    img_clima.src= Lista_de_clima.value;
+}
+</script>
