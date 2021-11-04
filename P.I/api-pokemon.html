@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+     <center>
+    Digite o nome do Pokemon: <input type="text" placeholder="Pokemon" id="ipt"> <br> <br>
+    <button onclick="buscarPokemon()">Buscar Pokemon</button>
+
+    <br>
+
+    <img src="" alt="Imagem de um Pokemon" id="img_pokemon" style="display: none;" height="200px">
+    
+    <img src="" alt="Imagem de um Pokemon" id="img_pokemonBB" style="display: none;" height="200px">
+
+    <img src="" alt="Imagem de um Pokemon" id="img_pokemon2" style="display: none;" height="200px">
+    
+    <img src="" alt="Imagem de um Pokemon" id="img_pokemon2BB" style="display: none;" height="200px">
+
+
+    <h1 id="error10" style="color: red; display: none;">ERRO!</h1>
+    </center>
+</body>
+</html>
+
+<script>
+    function buscarPokemon() {
+        fetch(` https://pokeapi.co/api/v2/pokemon/${ipt.value}`)
+        .then(function(resposta) {
+            resposta.json()
+            .then(function(json) {
+                
+
+                img_pokemon.src = json.sprites.front_default;
+                
+                img_pokemonBB.src = json.sprites.back_default;
+
+                img_pokemon2.src = json.sprites.front_shiny;
+
+                img_pokemon2BB.src = json.sprites.back_shiny;
+
+                img_pokemon.style.display = 'block';
+                img_pokemon2.style.display = 'block';
+                img_pokemonBB.style.display = 'block';
+                img_pokemon2BB.style.display = 'block';
+
+
+                console.log(json);
+                
+            })
+            .catch(function(error) {
+                
+                img_pokemon.style.display = 'none';
+                img_pokemon2.style.display = 'none';
+                img_pokemonBB.style.display = 'none';
+                img_pokemon2BB.style.display = 'none';
+                error10.style.display = 'block';
+
+                console.log(error);
+            })
+        })
+    }
+</script>
