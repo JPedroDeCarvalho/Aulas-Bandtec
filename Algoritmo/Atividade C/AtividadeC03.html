@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Entre com um Número: <input id="numero" type="text" placeholder="Ex:71..."> <br>
+    <button onclick="quadrada()"> Cálcular raiz quadrada </button> <br>
+    <div id="raiz_quadrada"></div> <br>
+    <button onclick="cubica()"> Cálcular raiz cúbica</button> <br>
+    <div id="raiz_cubica"></div> <br>
+
+</body>
+</html>
+
+<script>
+
+
+
+function quadrada() {
+    var cal_quadrada = Number(numero.value ** 2);
+    raiz_quadrada.innerHTML = `${cal_quadrada}`
+}
+
+function cubica() {
+    var cal_cubica = Number(numero.value ** 3);
+    raiz_cubica.innerHTML = `${cal_cubica}`
+}
+</script>

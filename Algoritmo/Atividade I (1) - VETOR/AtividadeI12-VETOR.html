@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do filho(a): <input type="text" placeholder="Ex:Yasmin" id="ipt_filho"> NÃO CADASTRE DOIS NOMES IGUAIS <br>
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+    <button onclick="atualizar()">Atualizar Família</button><br><br>
+
+    <div id="resul"></div>
+</body>
+</html>
+<script>
+   
+    var vtFilhos = [];
+    function cadastrar() {
+        
+        if (vtFilhos.includes(ipt_filho.value) == false) {
+        vtFilhos.push(ipt_filho.value)
+        } else {
+            alert("Não pode mais de 1 filho com o mesmo nome!")
+        }
+    }
+    
+    function atualizar() {
+        resul.innerHTML = `Você tem ${vtFilhos.length} filhos. <br> <br>
+        Seu custo mensal será aproximadamente R$${(vtFilhos.length * 3000).toFixed(2)} se colocar eles em escola particular
+        ou R$${(vtFilhos.length * 1500).toFixed(2)} se eles estudarem em escola pública`
+    }
+
+</script>

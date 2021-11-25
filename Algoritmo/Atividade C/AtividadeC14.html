@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sumir" onclick="iniciar()" style="display: block; font-size: 200%; background-color: rgb(255, 145, 0);
+    color: rgb(0, 0, 0);; font-family: Georgia, 'Times New Roman', Times, serif; border-color: black;
+    ">Iniciar o Jogo!</button> <br><br>
+<!-- Todo o layout feio em display com os IDs-->
+<img id="div_naruto" onclick="naruto_dano()" style="display: none; width: 400px; float:left;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/51158316-fd7e-48ca-b5fe-8542e9dfe357/ddyckby-a405dbbb-f009-4058-abe6-c5ca67ede1fd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMTU4MzE2LWZkN2UtNDhjYS1iNWZlLTg1NDJlOWRmZTM1N1wvZGR5Y2tieS1hNDA1ZGJiYi1mMDA5LTQwNTgtYWJlNi1jNWNhNjdlZGUxZmQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rFN986LxxQN3Xo6buWpsfVgLudpVwrbKoAmEHgn0ipU" alt=""></div>
+<img id="div_sasuke" onclick="sasuke_dano()" style="display: none; width: 400px; float:right;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/51158316-fd7e-48ca-b5fe-8542e9dfe357/dczuu3x-4e7dad76-11e3-4d79-a47e-f9311ff2961a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUxMTU4MzE2LWZkN2UtNDhjYS1iNWZlLTg1NDJlOWRmZTM1N1wvZGN6dXUzeC00ZTdkYWQ3Ni0xMWUzLTRkNzktYTQ3ZS1mOTMxMWZmMjk2MWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rf0pnIEjvyhqflthnSpsAZOzIppAatmt-lBEczqJKOA" alt=""></div>
+<div id="inv" style=" display: none; width: 100%;height: 400px; background-color: transparent;"></div>
+<div id="nome_naruto" style=" display: none; float: left; color: rgb(236, 169, 25); font-size: 25px;">Uzumaki Naruto (Rikudou Sennin)</div>
+<div id="nome_sasuke" style=" display: none; float: right; color: midnightblue; font-size: 25px;">Uchiha Sasuke (Rinne-Sharingan)</div> <br>
+<div id="inv_two" style=" display: none; width: 100%;height: 3px; background-color: transparent;"></div> <br>
+<div id="barra_naruto" style="display: none; float: left; height: 40px; width: 50%; background-color: rgb(236, 169, 25);  border-radius: 40px;"></div>
+<div id="barra_sasuke" style="display: none; float: right; height: 40px; width: 50%; background-color: midnightblue;  border-radius: 40px"></div> <br> <br>
+<div id="inv_tre" style=" display: none; width: 100%;height: 3px; background-color: transparent;"></div><br> <br>
+<span style="float: left; display: none; font-size: 25px; color: rgb(236, 169, 25);"  id="golpenumna"> 0 
+    <div style=" float: left; font-size: 25px; color: rgb(236, 169, 25);" id="golpena"> Golpes sofridos pelo Naruto:  </div></span>
+<div style="display: none; float: right; font-size: 25px; color: midnightblue;" id="golpesa">Golpes sofridos pelo Sasuke:
+     <span style="float: right; font-size: 25px; color: midnightblue;" id="golpenumsa"> 0 </span></div>
+
+
+</body>
+</html>
+
+<script>
+
+    var naruto_life = 50;
+    var sasuke_life = 50;
+    var cal_naruto = 0;
+    var cal_sasuke = 0;
+    barra_naruto.style.width = `${naruto_life}%`;
+    barra_sasuke.style.width = `${sasuke_life}%`;
+
+function iniciar() {
+
+ 
+    sumir.style.display = "none";
+    div_naruto.style.display = "block";
+    div_sasuke.style.display = "block"
+    inv.style.display = "block";
+    nome_naruto.style.display = "block";
+    nome_sasuke.style.display = "block";
+    inv_two.style.display = "block";
+    barra_naruto.style.display = "block";
+    barra_sasuke.style.display = "block";
+    inv_tre.style.display = "block";
+    golpena.style.display = "block";
+    golpesa.style.display = "block";
+    golpenumna.style.display = "block";
+    golpesnumsa.style.display = "block";
+}  
+
+function naruto_dano() {
+    naruto_life -= 1;
+    cal_naruto ++;
+    barra_naruto.style.width = `${naruto_life}%`;
+    golpenumna.innerHTML =`Golpes sofridos pelo Naruto: ${cal_naruto}`;
+    
+}
+
+function sasuke_dano() {
+    sasuke_life -= 1;
+    cal_sasuke ++;
+    barra_sasuke.style.width = `${sasuke_life}%`;
+    golpenumsa.innerHTML = cal_sasuke;
+}
+
+</script>

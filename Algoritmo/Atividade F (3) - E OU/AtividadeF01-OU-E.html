@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota do atendimento: <input type="text" placeholder="Ex:10..." id="ipt_um"> <br>
+    <button onclick="calcular()">Avaliar atendimento</button> <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var nota = ipt_um.value;
+        var invalida = nota <= 0 || nota >= 10;
+        var nAprovado = nota >= 0 && nota < 5;
+        var aprovado = nota > 6;
+        var neutro = nota == 5 || nota == 6;
+
+        if (invalida) {
+            resultado.innerHTML = "Nota inválida";
+        } else if (nAprovado){
+            resultado.innerHTML = "Não aprovado";
+        } else if (neutro){
+            resultado.innerHTML = "Neutro";
+        } else {
+            resultado.innerHTML = "Aprovado";
+        }
+    }
+
+</script>

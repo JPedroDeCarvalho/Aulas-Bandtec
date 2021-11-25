@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Filmes favoritos: <input type="text" placeholder="Ex: The Amazing Spider-Man" id="ipt_filmes"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <div id="resul"></div>
+</body>
+</html>
+<script>
+    var vtFilmes = []
+    var filmes = 0;
+
+    function cadastrar() {
+        filmes = ipt_filmes.value;
+        vtFilmes.push(ipt_filmes.value);
+        resul.innerHTML = ``
+        for (var cont = 0; cont < vtFilmes.length; cont++) {
+            resul.innerHTML += `${cont + 1}º Filme - ${vtFilmes[cont]} <br>`
+        }
+    }
+</script>

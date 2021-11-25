@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Depósitos que você fez: <input type="text" placeholder="Ex:10..." id="ipt_um"> <br>
+    Valor de cada depósito: <input type="text" placeholder="R$1000,00..." id="ipt_dois"><br>
+    <button onclick="calcular()">Acompanhar grana</button><br><br>
+    <span id="resul"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var dep = Number(ipt_um.value);
+        var val = Number(ipt_dois.value);
+        var soma = 0;
+        var por = 0;
+        resul.innerHTML = "";
+
+        if (dep < 3 || dep > 24 || val < 1000) {
+            alert("Dados incorretos!")
+        } else {
+            for (var index = 1; index <= dep; index++) {
+                soma += val 
+                if (index % 3 == 0) {
+                    por = soma * 0.01;
+                    soma = soma + por;
+                    resul.innerHTML += `${index}º Mês: R$ ${(soma).toFixed(2)} <br>`;
+                } else {
+                    resul.innerHTML += `${index}º Mês: R$ ${(soma).toFixed(2)} <br>`
+                }  
+            }
+        }
+    }
+</script>

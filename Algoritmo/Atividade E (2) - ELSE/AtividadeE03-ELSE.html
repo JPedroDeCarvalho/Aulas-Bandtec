@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><i> Acima de 6 Chocolates, cadqa um saí por R$2,50</i></h1>
+    Quantidade de Chocolates desejados: <input id="ipt_um" type="number" placeholder="Ex:10..."> <br>
+    <button onclick="calcular()"> Compra</button> <br> <br>
+    
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+function calcular() {
+    
+    var chocolate = Number(ipt_um.value);
+    var precoTotal = chocolate * 3;
+    if (chocolate > 6) {
+        precoTotal = chocolate * 2.5;
+        resultado.innerHTML = `o valor da sua compra foi de R$${precoTotal}`;
+    } else {
+        resultado.innerHTML = `o valor da sua compra foi de R$${precoTotal}`;
+
+    }
+}
+
+</script>
+
+

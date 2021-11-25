@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+ 
+ #resultado {
+      width: 200px;
+    }
+
+
+    </style>
+</head>
+<body>
+    Sua frequência na escola? <input id="ipt_um" type="text" placeholder="Ex:50..."> <br>
+    <button onclick="calcular()">Analisar frequência</button> <br><br>
+    <img id="resultado" src="" alt="">
+</body>
+</html>
+
+<script>
+function calcular() {
+    var frequencia = Number(ipt_um.value);
+    ipt_um.value = ""
+
+        if (frequencia < 50) {
+            resultado.src = "https://c.tenor.com/Leti_f4HKkMAAAAC/fresh-prince-of-bel-air-will-smith.gif";
+        } else {
+            resultado.src = "http://images2.memedroid.com/images/UPLOADED44/524ee2795b2d0.jpeg";
+        }
+        if (frequencia == 0) {
+            resultado.src = "";
+        }
+        if (frequencia > 100) {
+            resultado.src = "";
+        }
+        
+}
+</script>
+

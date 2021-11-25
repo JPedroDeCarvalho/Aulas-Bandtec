@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Entre com o peso da criança: <input oninput="calcular()" id="ipt_um" type="text" placeholder="Ex:13.5Kg..."> <br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var peso = Number(ipt_um.value);
+
+    if (peso == 18.3) {
+        resultado.innerHTML = "Peso perfeito";
+    } else if (peso > 21.2) {
+        resultado.innerHTML = "Acima do peso";
+    } else if (peso > 13.5) {
+        resultado.innerHTML = "Peso na média";
+    } else if (peso > 0) {
+        resultado.innerHTML = "Abaixo do peso";
+    } else {
+        resultado.innerHTML = "";
+    }
+}
+
+</script>
+
+

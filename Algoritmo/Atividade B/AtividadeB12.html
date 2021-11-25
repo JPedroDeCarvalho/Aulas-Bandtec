@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    KI base do Guerreiro Sayajin: <input id="baseki" type="text" placeholder="Ex:2000..."> <br> <br>
+   <b> Transformar em... </b> <br>
+   <button id="SSj" onclick="ssj()" style="float: left;">SSj</button>
+   <button id="SSj2" onclick="ssj2()" style="float: left;">SSj2</button>
+   <button id="SSj3" onclick="ssj3()" style="float: left;">SSj3</button>
+   <button id="SSj4" onclick="ssj4()" style="display: none;">SSj Blue</button> <br><br>
+   <div id="texttrans"></div> <br><br>
+   <img id="supe" style="height: 250px;" src="" alt="">
+ 
+
+</body>
+</html>
+
+<script>
+function ssj() {
+    var ssj = Number(baseki.value * 50) 
+    SSj4.style.display = 'none'
+    texttrans.innerHTML = `Após se transformar em ${SSj.innerHTML}, o ki desse Sayajin passa a ser de ${ssj}`
+   supe.src = 'https://pa1.narvii.com/6524/3483dcf55588b6aee11fad181b32ad5897bbf689_hq.gif'
+}
+function ssj2() {
+    var ssj2 = Number(baseki.value * 100) 
+    SSj4.style.display = 'none'
+    supe.src = 'https://thumbs.gfycat.com/ShortPoorGosling-max-1mb.gif'
+    texttrans.innerHTML = `Após se transformar em ${SSj2.innerHTML}, o ki desse Sayajin passa a ser de ${ssj2}`
+}
+function ssj3() {
+    var ssj3 = Number(baseki.value * 200) 
+    SSj4.style.display = 'block'
+    supe.src = 'https://c.tenor.com/MUvyR3X2nLQAAAAC/goku-super-saiyan.gif'
+    texttrans.innerHTML = `Após se transformar em ${SSj3.innerHTML}, o ki desse Sayajin passa a ser de ${ssj3}`
+}
+function ssj4() {
+    var ssj4 = Number(baseki.value * 5000) 
+    supe.src = 'https://i.pinimg.com/originals/1c/e9/73/1ce9734a884c0678d76148029677540d.gif'
+    texttrans.innerHTML = `Após se transformar em ${SSj4.innerHTML}, o ki desse Sayajin passa a ser de ${ssj4}`
+}
+</script>   

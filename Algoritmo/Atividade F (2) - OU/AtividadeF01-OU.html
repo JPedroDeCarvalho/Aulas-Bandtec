@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Fruta que chegou na mesa: <input type="text" placeholder="Ex:Abacaxi..." id="ipt_um"> <br>
+    <button onclick="calcular()">Vai comer?</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var fruta = ipt_um.value;
+        var comerUm = fruta == "uva";
+        var comerDois = fruta == "abacaxi";
+        var final = comerUm || comerDois;
+
+        if (final) {
+            alert (`Sim, vai comer ${fruta}!`)
+        } else {
+            alert(`A fruta ${fruta} ela não come!`)
+        }
+    }
+</script>

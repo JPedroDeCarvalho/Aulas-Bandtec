@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span id="inputs_entregas" style="display: block;">
+    Entregas para ZN: <input id="ZN_entregas" type="text" placeholder="Ex:4..."> <br>
+    Entregas para ZO: <input  id="ZO_entregas" type="text" placeholder="Ex:4..."><br>
+    Entregas para ZS: <input  id="ZS_entregas" type="text" placeholder="Ex:4..."><br>
+    Entregas para ZL: <input  id="ZL_entregas" type="text" placeholder="Ex:4..."><br> <br>
+    <button style="display: block;" onclick="agenda() ">Carregar agenda</button> </span>
+   
+<span id="botoes_entregas" style="display: none;">
+    <button onclick="subitrair_zn()">Entregar ZN</button>
+    <button onclick="subitrair_zo()">Entregar ZO</button>
+    <button onclick="subitrair_zs()">Entregar ZS</button>
+    <button onclick="subitrair_zl()">Entregar ZL </button> <br><br> </span>
+
+    <div id="aparecer">Entregas ZN: ${sub_zn} <br>
+        Entregas ZO:  ${sub_zo} <br>
+        Entregas ZS:  ${sub_zs} <br>
+        Entregas ZL:  ${sub_zl} <br>
+        Entregas restantes:  ${sub_total}</div> 
+ 
+
+
+
+
+    
+</body>
+</html>
+
+<script>
+
+  var sub_zn = Number(ZN_entregas.value);
+    var sub_zo = Number(ZO_entregas.value);
+    var sub_zs = Number(ZS_entregas.value);
+    var sub_zl = Number(ZL_entregas.value);
+    var sub_total = Number(sub_zn + sub_zo + sub_zs + sub_zl);
+
+function agenda() {
+
+    var sub_zn = Number(ZN_entregas.value);
+    var sub_zo = Number(ZO_entregas.value);
+    var sub_zs = Number(ZS_entregas.value);
+    var sub_zl = Number(ZL_entregas.value);
+    var sub_total = Number(sub_zn + sub_zo + sub_zs + sub_zl);
+
+    aparecer.innerHTML =``
+    inputs_entregas.style.display = "none";
+    botoes_entregas.style.display = "block";
+}
+
+function subitrair_zn() {
+    sub_total -= 1;
+    sub_zn -= 1;
+}
+
+
+
+</script>

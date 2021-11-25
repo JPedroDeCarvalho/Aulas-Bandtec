@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <b><h1>Estações</h1></b>  
+    <select  id="estacoes" onchange="mudar_estacoes()">
+        <option value="">Selecione uma estação</option>
+        <option value="https://catracalivre.com.br/wp-content/thumbnails/CKJPIROQxMWzcLBuzBCZ09CNY90=/wp-content/uploads/2020/10/unnamed-12.jpg">Verão</option>
+        <option value="https://dicasparaviagens.com.br/wp-content/uploads/2017/03/Outono-Principal.jpg">Outono</option>
+        <option value="https://services.meteored.com/img/article/bem-vinda-primavera-2020-o-que-esperar-inicio-da-estacao-das-chuvas-279801-1_1280.jpg">Primavera</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/9/95/Windbuchencom.jpg">Inverno</option>
+    </select> <br><br><br>
+
+    <img  id="img_troca" src="" alt=""> 
+
+
+</body>
+</html>
+
+<script>
+    function mudar_estacoes() {
+        img_troca.src = `${estacoes.value}`
+        img_troca.style.width = `200px`
+    }
+</script>

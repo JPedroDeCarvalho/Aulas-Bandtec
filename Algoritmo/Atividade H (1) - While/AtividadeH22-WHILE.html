@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parteUm {
+            display: block;
+        }
+        #parteDois {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="parteUm">
+        Números a serem sorteados: <input type="text" placeholder="Entre 11 e 49" id="ipt_um"> <br>
+        Insira um número para saber se é divisivel: <input type="text" placeholder="Entre 1 e 10" id="ipt_dois"><br>
+        <button onclick="calcular()">Sortear</button>
+    </p> 
+
+    <p id="parteDois">
+
+        <span id="sorteio">
+
+        </span> <br>
+
+        <span id="maior">
+
+        </span>
+
+        <span id="menor">
+
+        </span>
+
+        <span id="media">
+
+        </span>
+
+        <button onclick="voltar()">Voltar</button>
+    </p>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var numSorteados = Number(ipt_um.value);
+        var divisivel = Number(ipt_dois.value);
+        var cont = 1;
+        var med = 0;
+        var maximo = 0;
+        var minimo = 101;
+        var random = 0;
+
+        if (numSorteados < 11 || numSorteados > 49) {
+            alert("Insira os números sorteados dentro do limite!")
+        } else if (divisivel < 1 || divisivel > 10) {
+            alert("Insira o número divisivel dentro do limite!")
+        } else {
+            sorteio.innerHTML = "";
+            maior.innerHTML = "";
+            menor.innerHTML = "";
+            media.innerHTML = "";
+            parteUm.style.display = "none";
+            parteDois.style.display = "block";
+
+
+            while (cont <= numSorteados) {
+                random = Number((Math.random()*99 + 1).toFixed());
+                if (random % divisivel == 0){
+                    sorteio.innerHTML += `<span style="color:red"> ♬  ${random} </span> <br>`;
+                } else {
+                    sorteio.innerHTML += ` ♰ ${random} <br>`;
+                }
+                if (random > maximo) {
+                    maximo = random;
+                    maior.innerHTML = `✯ O maior número sorteado foi: ${maximo} <br><br>`;
+                }
+
+                if (random < minimo) {
+                    minimo = random;
+                    menor.innerHTML = `✯ O menor número sorteado foi: ${minimo} <br><br>`;
+                }
+
+                med = med + random;
+                if (cont == numSorteados) {
+                    media.innerHTML = `✯ A média de todos os números sorteados é: ${(med / numSorteados).toFixed()} <br><br>`;
+                }
+            cont++;
+            }    
+        }      
+    }
+    function voltar() {
+        parteUm.style.display = "block";
+        parteDois.style.display = "none";
+        ipt_um.value = "";
+        ipt_dois.value = "";
+    }
+</script>

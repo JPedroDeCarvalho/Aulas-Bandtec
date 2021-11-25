@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+Sabor da Pizza: <input id="pizza" type="text" placeholder="Ex:Chocolate..."> <br>
+Preço da Pizza: <input id="preco" type="text" placeholder="Ex:25.50..."> <br>
+Quantidade de amigos que vão comer: <input id="amigos" type="text" placeholder="Ex:5..."> <br>
+<button onclick="calculo()">Ver valor por amigo</button> <br><br>
+
+<div id="div_final"></div>
+
+
+
+
+</body>
+</html>
+
+<script>
+function calculo() {
+    div_final.innerHTML = `Cada amigo vai colaborar com <u>R$${preco.value / amigos.value}</u> para a pizza de ${pizza.value} `
+}
+
+
+</script>

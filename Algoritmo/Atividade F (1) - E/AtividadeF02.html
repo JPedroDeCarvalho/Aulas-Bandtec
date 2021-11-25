@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda do usuário: <input type="text" placeholder="Ex:R$1000.00..." id="ipt_um"> <br>
+    Renda familiar: <input type="text" placeholder="Ex:R$2000.00..." id="ipt_dois"> <br>
+    <button onclick="calcular()">Verificar ajuda</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var pessoal = Number(ipt_um.value);
+        var familiar = Number(ipt_dois.value);
+
+        if (pessoal <= 1050 && familiar <= 2100) {
+            alert("Você terá direito!")
+        } else {
+            alert("Você NÃO terá direito!")
+        }
+    }
+</script>

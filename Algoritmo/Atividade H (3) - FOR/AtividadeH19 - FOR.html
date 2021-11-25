@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sua idade: <input oninput="calcular()" type="text" placeholder="Ex:43..." id="ipt_um"> <br>
+    <span id="resul"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var idade = Number(ipt_um.value);
+        resul.innerHTML = "";
+        for (var index = 0; index < idade; index++) {
+            if (index <= 4) {
+                resul.innerHTML += `- ${index} anos (Primeira Infância) <br>`;
+            }
+            else if (index <= 6) {
+                resul.innerHTML += `- ${index} anos (Pré-escolar) <br>`;
+            }
+            else if (index <= 10) {
+                resul.innerHTML += `- ${index} anos (Segunda Infância) <br>`;
+            }
+            else if (index <= 18) {
+                resul.innerHTML += `- ${index} anos (Adolescência) <br>`;
+            }
+            else if (index <= 50) {
+                resul.innerHTML += `- ${index} anos (Adulto) <br>`;
+            }
+            else if (index <= 100) {
+                resul.innerHTML += `- ${index} anos (Melhor idade) <br>`;
+            }
+            else if (index > 100) {
+                resul.innerHTML += `- ${index} anos (Matusalém) <br>`;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #onibus {
+            color: red;
+        }
+        #trem {
+            color: green;
+        }
+        #metro {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    Quantidade de ônibus que pega: <input type="text" placeholder="Ex:3..." id="ipt_um"> <br>
+    Quantidade de trens que pega: <input type="text" placeholder="Ex:3..." id="ipt_dois"> <br>
+    Quantidade de metrôs que pega: <input type="text" placeholder="Ex:3..." id="ipt_tres"> <br>
+    <button onclick="calcular()">#Partiu Trajeto</button><br><br>
+    <span id="onibus"></span>
+    <span id="trem"></span>
+    <span id="metro"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var qntdOnibus = Number(ipt_um.value);
+        var qntdTrem = Number(ipt_dois.value);
+        var qntdMetro = Number(ipt_tres.value);
+        var contOni = 1;
+        var contTre = 1;
+        var contMet = 1;
+        onibus.innerHTML = "";
+        trem.innerHTML = "";
+        metro.innerHTML = "";
+        while (contOni <= qntdOnibus) {
+            if (contOni < 2) {
+                onibus.innerHTML += `-  Pegando o ${contOni}º buzão. <br>`;
+            }
+            if (contOni == 2) {
+                onibus.innerHTML += `-  Pegando o ${contOni}º buzão. Começando a cançar! <br> `;
+            }
+            if (contOni >= 3) {
+                onibus.innerHTML += `-  Pegando o ${contOni}º buzão. Já cansado! <br> `;
+            }
+            contOni++;
+        }
+
+        while (contTre <= qntdTrem) {
+            if (contTre < 2) {
+                trem.innerHTML += `-  Pegando o ${contTre}º metrô. <br>`;
+            }
+            if (contTre == 2) {
+                trem.innerHTML += `-  Pegando o ${contTre}º metrô. Começando a cançar! <br> `;
+            }
+            if (contTre >= 3) {
+                trem.innerHTML += `-  Pegando o ${contTre}º metrô. Já cansado! <br> `;
+            }
+            contTre++; 
+        }
+
+        while (contMet <= qntdMetro) {
+            if (contMet < 2) {
+                metro.innerHTML += `-  Pegando o ${contMet}º metrô. <br>`;
+            }
+            if (contMet == 2) {
+                metro.innerHTML += `-  Pegando o ${contMet}º metrô. Começando a cançar! <br> `;
+            }
+            if (contMet >= 3) {
+                metro.innerHTML += `-  Pegando o ${contMet}º metrô. Já cansado! <br> `;
+            }
+            contMet++; 
+        }
+    }
+</script>

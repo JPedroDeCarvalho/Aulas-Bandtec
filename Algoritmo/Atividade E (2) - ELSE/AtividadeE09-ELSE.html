@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+#span_dois{
+
+    display: none;
+}
+#span_um{
+
+    display: none;
+}
+#span_tres {
+
+    display: none;
+}
+#img_um {
+
+    width: 200px;
+}
+    </style>
+</head>
+<body>
+
+    <select id="slc_um" onchange="especie()">
+        <option value="">- Escolha uma Espécie -</option>
+        <option value="ovi">Ovíparos</option>
+        <option value="mami">Mamíferos</option>
+    </select> <br> <br>
+
+<span id="span_um">
+    <select id="slc_dois" onchange="oviparo()">
+        <option value="">- Escolha um Ovíparo -</option>
+        <option value="galinha">Galinha</option>
+        <option value="peixe">Peixe</option>
+        <option value="tartaruga">Tartaruga</option>
+    </select> <br> <br></span>
+
+    <span id="span_dois">
+    <select id="slc_tres" onchange="mamifero()">
+        <option value="">- Escolha um Mamífero -</option>
+        <option value="elefante">Elefante</option>
+        <option value="porco">Porco</option>
+        <option value="coelho">Coelho</option>
+    </select> <br> <br> </span>
+
+<span id="span_tres">
+    <img id="img_um" src=""> <br><br>
+
+    Valor de compra do animal: <input id="ipt_um" type="text" placeholder="Ex:R$500.00..."> <br>
+    <button id="" onclick="calcular()">Calcular imposto</button><br><br></span>
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+function especie() {
+    var especieEscolha = slc_um.value;
+        span_um.style.display = "none";
+        span_dois.style.display = "none";
+        span_tres.style.display = "none";
+        resultado.innerHTML = "";
+        ipt_um.value = "";
+
+             if (especieEscolha == "ovi") {
+                span_um.style.display = "block";
+            }
+            if (especieEscolha == "mami") {
+                span_dois.style.display = "block";
+            }
+};
+
+function oviparo() {
+    var oviparoEscolha = slc_dois.value;
+        span_tres.style.display = "none";
+        img_um.src = "";
+        resultado.innerHTML = "";
+        ipt_um.value = "";
+            if (oviparoEscolha == "galinha") {
+                span_tres.style.display = "block";
+                img_um.src = "https://aventurasnahistoria.uol.com.br/media/_versions/galinharicajjajjda_widexl.jpg";
+            }
+            if (oviparoEscolha == "peixe") {
+                span_tres.style.display = "block"; 
+                img_um.src = "https://blog.pescagerais.com.br/wp-content/uploads/2021/02/peixe-palhaco-procurando-nemo.jpg";
+            }
+            if (oviparoEscolha == "tartaruga") {
+                span_tres.style.display = "block";
+                img_um.src = "https://cdn.diferenca.com/imagens/tartaruga-cagado-e-jabuti-og.jpg";
+            }
+};
+
+function mamifero() {
+    var mamiferoEscolha = slc_tres.value;
+        span_tres.style.display = "none";
+        img_um.src = "";
+        resultado.innerHTML = "";
+        ipt_um.value = "";
+            if (mamiferoEscolha == "elefante") {
+                span_tres.style.display = "block";
+                img_um.src = "https://dcom-prod.imgix.net/files/inline-images/2%20%281%29%20%281%29_0.jpg";
+            }
+            if (mamiferoEscolha == "porco") {
+                span_tres.style.display = "block"; 
+                img_um.src = "http://www.ninha.bio.br/biologia/mamiferos/porco/porco_de_botas.jpg";
+            }
+            if (mamiferoEscolha == "coelho") {
+                span_tres.style.display = "block";
+                img_um.src = "https://blog.cobasi.com.br/wp-content/uploads/2021/01/mini-coelho-capa.png";
+            }
+};
+
+function calcular() {
+    var taxa = Number(ipt_um.value);
+    var oviparo = taxa * 0.05;
+    var mamifero = taxa * 0.1;
+            if (slc_tres.value) {
+                resultado.innerHTML = ` O imposto será de R$${mamifero.toFixed(2)}`;
+            } else {
+                resultado.innerHTML = `O imposto será de R$${oviparo.toFixed(2)}`;
+            }
+};
+</script>

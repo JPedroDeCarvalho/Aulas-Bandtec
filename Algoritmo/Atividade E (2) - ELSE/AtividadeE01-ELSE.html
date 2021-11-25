@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Seu nome: <input id="ipt_um" type="text" placeholder="Ex:Hinata Hyuga..."> <br>
+    Sua idade: <input id="ipt_dois" type="text" placeholder="Ex:18..."> <br>
+    <button onclick="calcular()">Avaliar Aluno</button> <br><br>
+
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var nome = ipt_um.value;
+    var idade = Number(ipt_dois.value);
+
+    if (idade < 18) {
+        resultado.innerHTML = `${nome} vai jogar PlayStation!`;
+    } else {
+        resultado.innerHTML = `${nome} vamos tirar a CNH?`;
+    }
+}
+
+
+</script>
+

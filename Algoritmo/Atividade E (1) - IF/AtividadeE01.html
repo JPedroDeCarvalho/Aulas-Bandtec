@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Festão</h2> <br>
+Coloque sua idade: <input id="valor_idade" type="text" placeholder="Ex: 15..."> <br><br><br>
+<img style="height: 400px; float: left;" onclick="calcular()"src="https://i.pinimg.com/474x/41/5a/74/415a747d5faeb4af2bf202999336f1e5.jpg" alt="">
+
+<img style="display: none; height: 400px; float: left;" id="imagem" style="display: none; width: 20opx;" 
+src="https://c.tenor.com/qx-GHukn5AIAAAAC/konosuba-dancing.gif" alt="">
+</body>
+</html>
+
+
+<script>
+function calcular() {
+  // IFs com alert e "." Style para mostrar a img quando a comparação der maior de 18.
+    if (valor_idade.value < 18) {
+        alert ("Pedir permissão para os pais!!");
+        imagem.style.display = "none";
+    }
+    if (valor_idade.value >= 18) {
+        imagem.style.display = "block";
+    }
+    if (valor_idade.value > 100) {
+        alert("cê tá morto carai")
+    }
+    alert ('#PARTIU FESTA!!!');
+
+    
+    
+}
+
+
+
+</script>

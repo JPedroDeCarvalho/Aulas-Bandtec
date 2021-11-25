@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #telaLogin {
+            display: block;
+        }
+
+        #telaSimulacao {
+            display: none;
+        }
+
+        #telaResultado {
+            display: none;
+        }
+
+        #botao {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--Aqui começo a primeira pagina-->
+    <span id="telaLogin">
+        <h1>Seja bem vindo ao banco KNAB</h1> 
+        <h3>Simulação de Emprestimos e Investimentos</h3> 
+        <h5>Entre com os dados de sua conta:</h5> 
+        <input type="text" placeholder="Conta" id="ipt_um">
+        <input type="text" placeholder="Dígito" id="ipt_dois">
+        <input type="text" placeholder="Senha" id="ipt_tres"> <br> <br> <br>
+        <button onclick="telaInicial()">Simular</button>
+    </span>
+
+    <span id="telaSimulacao">
+        <h1>O banco KNAB é a sua melhor opção</h1>
+        <h3>Emprestimos e Investimentos com as melhores taxas do mercado</h3>
+        <h5>Entre com os dados da sua simulação</h5> <br>
+        Valor da operação: <input type="text" placeholder="Valor" id="ipt_quatro"> <br><br>
+        <select id="slc_um">
+            <option value="">- Selecione a operação -</option>
+            <option value="empréstimo">Empréstimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+        <select id="slc_dois">
+            <option value="">- Selecione o prazo -</option>
+            <option value="curto">Curto</option>
+            <option value="médio">Médio</option>
+            <option value="longo">Longo</option>
+        </select> <br><br>
+        <button onclick="resultadoSimulacao()">Mostrar o Resultado</button>
+    </span>
+    <div id="telaResultado">
+        
+    </div>
+    <button id="botao" onclick="voltar()">Voltar a Simulação</button>
+    
+</body>
+</html>
+<script>
+    var vezesClicado = 0;
+    function telaInicial() {
+        var conta = Number(ipt_um.value);
+        var digito = Number(ipt_dois.value);
+        var senha = ipt_tres.value;
+        var divisaodigito = conta % 11
+        var manaus = divisaodigito >= 0 && divisaodigito <= 3 && senha == "manaus";
+        var recife = divisaodigito >= 4 && divisaodigito <= 7 && senha == "recife";
+        var fortaleza = divisaodigito >= 8 && divisaodigito <= 11 && senha == "fortaleza";
+
+        if (manaus || recife || fortaleza) {
+            telaLogin.style.display = "none";
+            telaSimulacao.style.display = "block";
+        } else {
+            alert ("Dados incorretos! Por Favor, verifique os dados inseridos!")
+        }
+    }
+    function resultadoSimulacao() {
+        var valor = Number(ipt_quatro.value);
+        var operacao = slc_um.value;
+        var emprestimo = operacao == "empréstimo";
+        var investimento = operacao == "investimento";
+        var prazo = slc_dois.value;
+        var curto = prazo == "curto";
+        var medio = prazo == "médio";
+        var longo = prazo == "longo";
+        var empCurto = emprestimo && curto;
+        var empMedio = emprestimo && medio;
+        var empLongo = emprestimo && longo;
+        var invCurto = investimento && curto;
+        var invMedio = investimento && medio;
+        var invLongo = investimento && longo;
+        var valEmpCurto = valor * 0.24;
+        var valEmpMedio = valor * 0.16;
+        var valEmpLongo = valor * 0.10;
+        var valInvCurto = valor * 0.05;
+        var valInvMedio = valor * 0.08;
+        var valInvLongo = valor * 0.12;
+        var total = empCurto || empMedio || empLongo || invCurto || invMedio || invLongo;
+        vezesClicado ++;
+
+        if (empCurto) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o empréstimo de R$${valor} no ${prazo} prazo
+        será cobrado os juros de R$${valEmpCurto} ao ano <br>`;
+        }  else if (empMedio) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o empréstimo de R$${valor} no ${prazo} prazo
+        será cobrado os juros de R$${valEmpMedio} ao ano <br>`;
+        } else if (empLongo) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o empréstimo de R$${valor} no ${prazo} prazo
+        será cobrado os juros de R$${valEmpLongo} ao ano<br>`;  
+        }  else if (invCurto) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o investimento de R$${valor} no ${prazo} prazo
+        o seu rendimento será de R$${valInvCurto} ao ano<br>`;     
+        } else if (invMedio) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o investimento de R$${valor} no ${prazo} prazo
+        o seu rendimento será de R$${valInvMedio} ao ano<br>`;       
+        } else if (invLongo) {
+            telaSimulacao.style.display = "none";
+            telaResultado.style.display = "block";
+            botao.style.display = "block";
+            telaResultado.innerHTML += `Simulação ${vezesClicado} – Para o investimento de R$${valor} no ${prazo} prazo
+        o seu rendimento será de R$${valInvLongo} ao ano<br>`;
+        } else {
+            alert("Por favor, selecione uma opção válida!")
+        } if (curto || medio) {
+            alert("Esta operação está condicionada ao seu perfil");
+        } 
+    }
+    function voltar() {
+        botao.style.display = "none"
+        telaSimulacao.style.display = "block";
+        telaResultado.style.display = "none";
+    }
+</script>
+

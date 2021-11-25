@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de latinhas de coca tomadas em vida? <input type="text" placeholder="Ex:3" id="ipt_um"> <br>
+    <button onclick="calcular()">Ver quantidade</button><br><br>
+    <div style="height: 100vh; width: 98vw;" id="resul"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var qntd = Number(ipt_um.value);
+        resul.innerHTML = "";
+        for (var index = 1; index <= qntd; index++) {
+            resul.innerHTML += `<img style="height: 40px; flew-wrap: wrap" src='../coca.jpg'>`;
+        }
+    }
+</script>

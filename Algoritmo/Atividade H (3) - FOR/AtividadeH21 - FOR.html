@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Seu número da sorte entre 0 e 100: <input id="ipt_um" placeholder="Ex:50... " type="text"> <br>
+    <button onclick="calcular()">Valendo!</button>
+</body>
+</html>
+<script>
+    function calcular() {
+        var numSorte = Number(ipt_um.value);
+        for (var cont = 0; cont == cont; cont++) {
+            var aleatorios = (Number(Math.random() * 100 )).toFixed()
+            if (aleatorios == numSorte) {
+                alert(`Foram necessários ${cont} sorteios`)
+                break
+            }
+        }
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de filhos: <input id="ipt_um" type="text" placeholder="Ex:3..."> <br>
+    <button onclick="calcular()">Analisar família</button> <br><br>
+
+    <div id="resultadoUm"></div>
+    <div id="resultadoDois"></div>
+    <div id="resultadoTres"></div>
+    <div id="resultadoQuatro"></div>
+
+</body>
+</html>
+
+<script>
+function calcular() {
+    var filhos = Number(ipt_um.value);
+
+    resultadoUm.innerHTML = ``;
+    resultadoDois.innerHTML = ``;
+    resultadoTres.innerHTML = ``;
+    resultadoQuatro.innerHTML = ``;
+
+    if (filhos >= 1 ) {
+        resultadoUm.innerHTML = `Não tem TV!`;
+    }
+    if (filhos >= 2 ) {
+        resultadoDois.innerHTML = `Não tem Internet!`;
+    }
+    if (filhos >= 3 ) {
+        resultadoTres.innerHTML = `Não tem Video Game!`;
+    }
+    if (filhos >= 4 ) {
+        resultadoQuatro.innerHTML = `Não tem Netflix!`;
+    }
+    if (filhos > 100) {
+        resultadoUm.innerHTML = ``;
+    resultadoDois.innerHTML = ``;
+    resultadoTres.innerHTML = ``;
+    resultadoQuatro.innerHTML = ``;
+    alert("Para de mentir, Corno!")
+    }
+}
+
+
+</script>
+
+
+

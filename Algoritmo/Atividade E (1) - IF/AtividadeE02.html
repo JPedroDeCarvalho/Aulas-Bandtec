@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calcular quantidade de Refri por ano</h2> 
+
+Latinhas de Refrigerantes bebidas por dia: <input id="ipt_refri" type="text" placeholder="Ex:2...">
+ <button onclick="calcular()">Quantos refris?</button> <br><br><br>
+ <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+function calcular() {
+
+    var por_ano = Number(ipt_refri.value) * 365;
+    resultado.innerHTML = `Você toma ${por_ano} latinhas por ano!`;
+
+    if (por_ano >= 500) {
+      
+        alert ("CUIDADO COM O DIABETES!!");
+}
+
+}
+
+</script>

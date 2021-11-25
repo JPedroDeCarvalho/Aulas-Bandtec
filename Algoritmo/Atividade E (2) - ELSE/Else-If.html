@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de partidas: <input id="ipt_um" type="text" placeholder="Ex:3..."> <br>
+    Gols por partida: <input id="ipt_dois" type="text" placeholder="Ex:3..."> <br>
+    <button onclick="calcular()">Calcular média</button> <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var partida = Number(ipt_um.value);
+    var gols = Number(ipt_dois.value);
+    var media = (gols / partida).toFixed(2);
+
+    if (media > 0.6) {
+        resultado.innerHTML = `Atacante do futuro`;
+    } else if (media >= 0.2) {
+        resultado.innerHTML = `Atacante mediano`;
+    } else {
+        resultado.innerHTML = `Mudar de carreira`;
+    }
+
+    resultado.innerHTML += `<br> <br> Sua média foi de ${media}`;
+}
+
+</script>

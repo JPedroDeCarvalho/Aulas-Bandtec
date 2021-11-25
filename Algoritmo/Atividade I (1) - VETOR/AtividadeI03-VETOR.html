@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Bairros que você já morou: <input type="text" placeholder="Ex: Parque Peruche..." id="ipt_bairro"> <br>
+    <button onclick="cadastrar()">CADASTRAR BAIRRO</button> <br><br>
+    Local que você morou (na ordem que você acrescentou) <input type="text" placeholder="Ex: 2..." id="ipt_local"> <br>
+    <button onclick="relembrar()">RELEMBRAR MORADIA</button> <br><br>
+    <div id="resul"></div>
+</body>
+</html>
+<script>
+    var bairros = [];
+    var local = 0;
+    function cadastrar() {
+        bairros.push(ipt_bairro.value);
+    }
+    function relembrar() {
+        local = Number(ipt_local.value);
+        if (bairros.length < local ) {
+            resul.innerHTML = `Você ainda não morou num ${local}º bairro!`
+        } else if (local <= 0) {
+            resul.innerHTML = `Insira um valor no local!`
+        } else {
+            resul.innerHTML = `Seu ${local}º bairro foi o(a) ${bairros[local - 1]}`;
+        }
+    }
+</script>

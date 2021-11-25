@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span style="float: left;"> Valor guardado no cofrinho: R$ </span>
+     <div id="val" >0.00</div> 
+    Valor a ser depositado: <input id="deposito" type="text" placeholder="50.00..."> <br>
+    <button style="float: left;" onclick="depositar()">Depositar</button>
+    <button onclick="tirar()">Tirar toda a grana</button>
+</body>
+</html>
+
+<script>
+
+var soma = 0;
+
+function depositar() {
+
+ soma = soma + Number(deposito.value);
+
+    val.innerHTML = soma;
+
+}
+
+
+function tirar() {
+    soma = 0;
+var zero =  Number(deposito.value - deposito.value);
+    val.innerHTML = zero;
+}
+
+
+</script> 

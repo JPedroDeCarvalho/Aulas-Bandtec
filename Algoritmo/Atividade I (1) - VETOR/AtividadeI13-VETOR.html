@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="ved">
+        <option selected disabled>- Indique o Resultado -</option>
+        <option value="ganhou">Vitória</option>
+        <option value="empatou">Empate</option>
+        <option value="perdeu">Derrota</option>
+    </select> 
+    <button onclick="registrar()">Registrar jogo</button> <br><br>
+    <div id="resul"></div> <br><br>
+
+    Qual jogo quer saber o resultado? <input oninput="mostrarJogo()" id="jogo" type="text"> <br><br>
+    <div id="resulJogo"></div>
+
+</body>
+</html>
+<script>
+    var vtJogos = [];
+    var vitoriaP = 0;
+    var empateP = 0;
+    var derrotaP = 0;
+    var aproveitamento = 0;
+    var totalP = 0;
+    var contTotalPontosGerais = 0
+
+    function registrar() {
+        if (ved.value != "ganhou" && ved.value != "empatou" && ved.value != "perdeu") {
+            alert("oi")
+        } else {
+            if (ved.value == "ganhou") {
+                vtJogos.push(ved.value)
+                vitoriaP++;
+                contTotalPontosGerais += 3;
+            } else if (ved.value == "empatou") {
+                vtJogos.push(ved.value)
+                empateP++;
+                contTotalPontosGerais+= 3;
+            } else if (ved.value == "perdeu") {
+                vtJogos.push(ved.value)
+                derrotaP++;
+                contTotalPontosGerais+= 3;
+            }
+
+            resul.innerHTML = `O time teve: ${vitoriaP} vitórias, ${empateP} empates, ${derrotaP} derrotas <br><br>
+
+            Pontuação total: ${totalP = (vitoriaP * 3)+(empateP) } pontos<br><br>
+
+            Aproveitamento: ${aproveitamento = (totalP / contTotalPontosGerais * 100).toFixed(2)} %`;
+        }
+    }
+
+    function mostrarJogo() {
+        var jogos = jogo.value;
+
+        if (jogos == 0) {
+            resulJogo.innerHTML = ``;
+        } else if (vtJogos.length < jogos ) {
+            resulJogo.innerHTML = `Não foi cadastrado um ${jogos}º jogo!`
+        } else {
+            resulJogo.innerHTML = `No ${jogos}º jogo, o time ${vtJogos[jogos - 1]} `;
+        }
+    }
+</script>

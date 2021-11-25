@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Bandtec destruiu minha vida!</title>
+    <style>
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de cansaço do aluno Bandtec</h1>
+    <span>Meio de transporte</span> <br><br>
+    <select id="slc_um">
+        <option value="on">Ônibus</option>
+        <option value="me">Metrô</option>
+        <option value="ca">Carro</option>
+        <option value="bi">Bicicleta</option>
+        <option value="lo">Lotação</option>
+    </select> <br>
+    <button onclick="calcular()">Calcular cansaço</button>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var transporte = slc_um.value;
+        var tranquilo = transporte == "ca" || transporte == "bi";
+        var poucoCansado = transporte == "me";
+        var muitoCansado = transporte == "on" || transporte == "lo";
+
+        if (muitoCansado) {
+            alert("Vish... vive cansado.")
+        } else if(poucoCansado){
+            alert("Um pouco cansado")
+        } else {
+            alert("Tá tranquilo...")
+        }
+    }
+</script>
+ 

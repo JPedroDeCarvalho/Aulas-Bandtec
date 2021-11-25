@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hora que você assiste Netflix: <input type="text" placeholder="Ex:20h..." id="ipt_um"> <br>
+    <button onclick="calcular()">Ver recomendação</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var hora = Number(ipt_um.value);
+        var netflix = hora >= 19 && hora <= 21;
+
+        if (netflix) {
+            alert(`Não é recomendável que você assista Netflix ás ${hora}h`)
+        } else {
+            alert(`Ás ${hora}h é adequado para assistir Netflix!`)
+        }
+    }
+</script>

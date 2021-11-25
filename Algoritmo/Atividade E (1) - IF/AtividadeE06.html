@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda familiar: <input id="ipt_um" type="text" placeholder="Ex:1500.00..."> <br>
+    Prestação: <input id="ipt_dois" type="text" placeholder="Ex:3000.00..."> <br>
+    <button onclick="calcular()">Verificar financiamento</button> <br><br>
+    <span id="resultado"></span> <b style="color: red;" id="resultado_if"></b>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var renda = Number(ipt_um.value);
+    var prestacao = Number(ipt_dois.value);
+    var porcentagem =((prestacao / renda) * 100 ).toFixed(2);
+
+    resultado.innerHTML = `a prestação corresponde a ${porcentagem}% da renda familiar!`;
+    resultado_if.innerHTML = ``;
+
+    if (porcentagem > 30) {
+        resultado_if.innerHTML = `Será necessário complementar a renda familiar`;
+    }
+}
+
+</script>
+

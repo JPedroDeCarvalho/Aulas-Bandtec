@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Seu saldo no banco: <input type="text" placeholder="Ex:-1000.00" id="ipt_um"> <br>
+    <button onclick="calcular()">Verificar finanças</button> <br><br>
+
+    <span style="display: block;" id="resultado"></span> <br>
+    <br><br><br>
+
+    <img id="imagem" style="display: none; width: 250px;" src="AtividadeE10img.png" alt="">
+</body>
+</html>
+
+<script>
+function calcular() {
+    var saldo = Number(ipt_um.value);
+
+    resultado.innerHTML = ``
+    imagem.style.display = "none"
+    if (saldo == 0) {
+        resultado.innerHTML = `Conta zerada!`
+        resultado.style.color = "black"
+    }
+    if (saldo > 0) {
+        resultado.innerHTML = `Saldo positivo! :)`
+        resultado.style.color = "blue"
+    }
+    if (saldo < 0) {
+        resultado.innerHTML = `Está devendo. Pague já o aluguel!`
+        resultado.style.color = "red"
+        imagem.style.display = "block"
+    }
+}
+
+</script>

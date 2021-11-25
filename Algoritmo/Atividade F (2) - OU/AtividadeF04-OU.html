@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slc_um">
+        <option value="">- Forma de pagamento -</option>
+        <option value="di">Dinheiro</option>
+        <option value="cr">Crédito</option>
+        <option value="de">Débito</option>
+        <option value="bo">Boleto</option>
+    </select> <br>
+    <button onclick="calcular()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var pagamento = slc_um.value;
+        var vista = pagamento == "di" || pagamento == "de";
+        var parcelado = pagamento == "cr" || pagamento == "bo";
+
+        if (vista) {
+            alert("Você terá que pagar a vista")
+        } else if (parcelado){
+            alert("Pagamento poderá ser parcelado")
+        } else {
+            alert("Escolha uma forma de pagamento, por favor!")
+        }
+    }
+</script>

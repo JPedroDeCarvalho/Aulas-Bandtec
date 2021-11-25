@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    KI base do Guerreiro Sayajin: <input id="baseki" type="text" placeholder="Ex:2000..."> <br> <br>
+   <b> Transformar em... </b> <br>
+   <button id="SSj" onclick="ssj()" style="float: left;">SSj</button>
+   <button id="SSj2" onclick="ssj2()" style="float: left;">SSj2</button>
+   <button id="SSj3" onclick="ssj3()" style="float: left;">SSj3</button> <br><br>
+   <div id="texttrans"></div>
+ 
+
+</body>
+</html>
+
+<script>
+function ssj() {
+    var ssj = Number(baseki.value * 50) 
+
+    texttrans.innerHTML = `Após se transformar em ${SSj.innerHTML}, o ki desse Sayajin passa a ser de ${ssj}`
+}
+function ssj2() {
+    var ssj2 = Number(baseki.value * 100) 
+
+    texttrans.innerHTML = `Após se transformar em ${SSj2.innerHTML}, o ki desse Sayajin passa a ser de ${ssj2}`
+}
+function ssj3() {
+    var ssj3 = Number(baseki.value * 200) 
+
+    texttrans.innerHTML = `Após se transformar em ${SSj3.innerHTML}, o ki desse Sayajin passa a ser de ${ssj3}`
+}
+</script>   

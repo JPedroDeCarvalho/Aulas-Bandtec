@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda Mensal: <input oninput="calcular()" id="ipt_um" type="text" placeholder="Ex:A$130.00..."> <br><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var salario = Number(ipt_um.value);
+
+    if (salario > 9500) {
+        resultado.innerHTML = `Classe A`;
+    } else if (salario > 2500) {
+        resultado.innerHTML = `Classe B`;
+    } else if (salario > 900) {
+        resultado.innerHTML = `Classe C`;
+    } else if (salario > 250) {
+        resultado.innerHTML = `Classe D`;
+    } else if (salario > 0){
+        resultado.innerHTML = `Classe E`;
+    } else {
+        resultado.innerHTML = "";
+    }
+}
+
+</script>

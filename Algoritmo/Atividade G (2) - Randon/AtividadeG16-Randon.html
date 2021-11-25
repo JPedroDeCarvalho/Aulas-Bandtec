@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Seu nome: <input type="text" placeholder="Ex:Hinata Hyuga..." id="ipt_um"> <br>
+    Seu número da sorte: <input type="text" placeholder="Ex:10..." id="ipt_dois"><br>
+    <button onclick="sortear()">Sortear</button> <br> <br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    var sorteio = 0;
+    function sortear() {
+        var aleatorio = (Math.random() * 9 + 1).toFixed(0);
+        var nome = ipt_um.value;
+        var numSorte = Number(ipt_dois.value);
+        sorteio ++;
+
+        if (numSorte < 1 || numSorte > 10) {
+            alert("Por favor, entre com um número entre 1 e 10!")
+        } else if (numSorte == aleatorio) {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio} <br>
+            Parabéns, ${nome} você foi sorteado(a) após ${sorteio} sorteios!`;      
+        } else {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio}`;
+        }
+
+
+    }
+</script>

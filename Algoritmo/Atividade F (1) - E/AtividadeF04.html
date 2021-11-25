@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slc_um">
+        <option value="">- O que você come no café da manhã? -</option>
+        <option value="ov">Ovos</option>
+        <option value="le">Leite de arroz</option>
+        <option value="ba">Bacon</option>
+    </select>
+
+    <select id="slc_dois">
+        <option value="">- O que você come no almoço? -</option>
+        <option value="bi">Bife</option>
+        <option value="ha">Hamburger de soja</option>
+        <option value="fr">Frango grelhado</option>
+    </select>
+
+    <select id="slc_tres">
+        <option value="">- O que você come na janta? -</option>
+        <option value="pi">Picanha de soja</option>
+        <option value="cu">Cupim</option>
+        <option value="co">Coração</option>
+    </select> <br><br>
+
+    <button onclick="calcular()">Sou vegano?</button>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var cafe = slc_um.value;
+        var almoco = slc_dois.value;
+        var janta = slc_tres.value;
+        var vegano = cafe == "le" && almoco == "ha" && janta == "pi";
+        var pobre = cafe == "" && almoco == "" && janta == "";
+        
+        if (vegano) {
+            alert("Você é vegano!")
+        } else if (pobre) {
+            alert("Você tá bem? Quer ajuda? Eu te compro uma cesta básica") 
+        } else {
+            alert("Você NÃO é vegano!")
+        }
+    }
+</script>
+

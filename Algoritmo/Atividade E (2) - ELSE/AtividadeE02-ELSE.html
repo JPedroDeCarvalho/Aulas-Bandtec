@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Saldo da Conta: <input  id="ipt_um" type="text" placeholder="Ex:R$2000.00..."> <br>
+    Valor do Débito: <input  id="ipt_dois" type="text" placeholder="Ex:R$1000.00..."> <br>
+    <button sty onclick="calcular()">Analisar conta</button> <br><br>
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+  function calcular() {
+    var conta = Number(ipt_um.value);
+    var debito = Number(ipt_dois.value);    
+    var final = (conta - debito).toFixed(2);
+
+     
+      if (final < 0) {
+        resultado.innerHTML = `O saldo atual da conta corrente é R$${final}`;
+        resultado.style = "font-weight: bold; color: red;"
+      } else {
+        resultado.innerHTML = `<i>O saldo atual da conta corrente é R$${final}</i>`;
+        resultado.style = "color: royalblue;";
+       }
+    }
+
+</script>

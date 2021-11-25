@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome da empresa: <input type="text" placeholder="Ex:Accenture..." id="ipt_um"> <br>
+    Valor da bolsa: <input type="text" placeholder="Ex:R$1800,00..." id="ipt_dois"> <br>
+    Valor do VR: <input type="text" placeholder="Ex:R$20,00..." id="ipt_tres"> <br>
+    Tempo de deslocamento empresa/Bandtec: <input type="text" placeholder="Ex:30min..." id="ipt_quatro"> <br> <br>
+    <button onclick="calcular()">É preferida?</button> <br><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var empresa = ipt_um.value;
+        var bolsa = Number(ipt_dois.value);
+        var vr = Number(ipt_tres.value);
+        var tempo = Number(ipt_quatro.value);
+        var requisito = bolsa >= 1800 || vr >= 20 || tempo <= 30;
+
+        if (requisito) {
+            resultado.innerHTML = `A empresa ${empresa} é uma de suas preferências!`
+        } else {
+            resultado.innerHTML = `A empresa ${empresa} está fora da sua lista`
+        }
+    }
+</script>

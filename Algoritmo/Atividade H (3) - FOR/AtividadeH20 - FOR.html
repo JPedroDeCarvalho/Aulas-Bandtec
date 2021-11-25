@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="calcular()">Ver minha sorte</button> <br>
+    <span id="resul"></span> <br><br>
+    <div id="sorte"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var cor = 0;
+        var jog = 0;
+        resul.innerHTML = "";
+        sorte.innerHTML = "";
+        
+        for (var cont = 1; cont <= 21; cont++) {
+            var random = (Number(Math.random()).toFixed(0))
+            if (random == 0) {
+                resul.innerHTML += ` <img style="height: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/220px-Heart_coraz%C3%B3n.svg.png">`
+                cor++
+            } else if (random == 1){
+                resul.innerHTML += ` <img style="height: 40px" src="https://www.pontofrio-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=923195809">`
+                jog++
+            }
+
+            if (cor >= 11) {
+                sorte.innerHTML = "Você tem mais sorte no amor";
+                break
+            }
+
+            if (jog >= 11) {
+                sorte.innerHTML = "Você tem mais sorte no jogo";
+                break
+            }
+        }
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="clique" onclick="calcular()">Clica nimin carai</button> <br>
+    <br>
+    <div id="clique_resultado"></div>
+    <div id="resultado"></div> 
+</body>
+</html>
+
+    
+<script>
+
+    var clique = 0
+
+function calcular() {
+
+    clique ++;
+    clique_resultado.innerHTML = `Quantidade de cliques ${clique}`;
+    if (clique > 15) {
+        resultado.innerHTML = `Eita dedo nervoso!`;
+    } else if (clique >= 11) {
+        resultado.innerHTML = `Gosta de clicar, hein!`;
+    } else if (clique >= 5) {
+        resultado.innerHTML = `Dedo bom!`;
+    } else if (clique >= 0) {
+        resultado.innerHTML = `Dedo fraquinho, hein!`;
+    }
+}
+</script>
+
+
+

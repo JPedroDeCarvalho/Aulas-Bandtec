@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de elefantes: <input type="text" placeholder="Ex:4..." id="ipt_um"><br>
+    <button onclick="calcular()">Atazanar o médium</button><br><br>
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var elefantes = Number(ipt_um.value);
+        resultado.innerHTML = "";
+        var cont = 1;
+        var inco = "incomodam";
+
+        while (cont <= elefantes) {
+            resultado.innerHTML += `1 elefante incomoda muita gente! <br>`
+            resultado.innerHTML += `${(cont) + 1} elefantes ${inco += ", incomodam "} muito mais!<br><br>`;
+            cont++;
+        }    
+    }
+</script>
+
+
+<!-- 
+Crie um programa em HTML/JS o qual:
+
+a) Solicite ao usuário a quantidade elefantes
+
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com
+ 2 elefantes e depois 3... 
+até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme
+ essa mesma quantidade.
+
+Por exemplo, o se o usuário informar 4 em a), devem aparacer 3 estrofes, como no enunciado da questão,
+ de "2 elefantes" até "4 elefantes" -->

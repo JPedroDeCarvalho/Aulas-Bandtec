@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Valor guardado: <span id="resultado_um">R$0.00</span></div>
+    <div id="resultado_dois"></div>
+    <div id="resultado_tres"></div>
+    <button onclick="cinco()">Guardar R$5,00</button>
+    <button onclick="dez()">Retirar R$10,00</button>
+</body>
+</html>
+
+<script>
+
+  var cincoMais = 0;
+  var dezMenos = 0;
+
+function cinco() {
+    cincoMais = cincoMais + 5;
+    resultado_um.innerHTML = `R$${cincoMais},00`;
+    resultado_tres.innerHTML = "";
+
+    if (cincoMais < -20) {
+    resultado_tres.innerHTML = `Quase um Corinthians!`;
+    } else if (cincoMais > 100) {
+        resultado_tres.innerHTML = `#Ostentação`;
+    } else if (cincoMais >= 0) {
+        resultado_dois.innerHTML = `Finanças OK!`;
+        resultado_dois.style = "color: blue;";
+    } else if (cincoMais < 0) {
+        resultado_dois.innerHTML = `Finanças em perigo!`;
+        resultado_dois.style = "color: red;";
+    }
+}
+
+function dez() {
+    dezMenos = 10;
+    cincoMais = cincoMais - dezMenos;
+    resultado_um.innerHTML = `R$${cincoMais},00`;
+    resultado_tres.innerHTML = "";
+
+    if (cincoMais < -20) {
+    resultado_tres.innerHTML = `Quase um Corinthians!`;
+    } else if (cincoMais > 100) {
+        resultado_tres.innerHTML = `#Ostentação`;
+    } else if (cincoMais >= 0) {
+        resultado_dois.innerHTML = `Finanças OK!`;
+        resultado_dois.style = "color: blue;";
+    } else if (cincoMais < 0) {
+        resultado_dois.innerHTML = `Finanças em perigo!`;
+        resultado_dois.style = "color: red;";
+    } 
+} 
+
+</script>
+

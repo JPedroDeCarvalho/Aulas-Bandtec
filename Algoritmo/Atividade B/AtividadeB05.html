@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da passagem de Ônibus: <input id="onibus" type="text" placeholder="Ex: 4.40..."> <br>
+    Quantidade de viagens / mês: <input id="mes" type="text" placeholder="Ex: 25..."> <br>
+    <button onclick="cal()">Calcular VT</button> <br><br>
+    <h1>Seu Cálculo aparecerá abaixo</h1> <br>
+    <div id="tex"></div>
+
+
+</body>
+</html>
+
+<script>
+ function cal() {
+     tex.innerHTML = ` Você vai gastar <u>R$${onibus.value * mes.value}</u> por mês com ônibus!`
+ }
+
+</script>

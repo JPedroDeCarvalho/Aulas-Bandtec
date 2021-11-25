@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slc_um">
+        <option value="">- Tipo de passageiro -</option>
+        <option value="co">Comum</option>
+        <option value="es">Estudante</option>
+        <option value="id">Idoso/PNE</option>
+    </select>
+    <select id="slc_dois">
+        <option value="">- Tipo da passagem -</option>
+        <option value="un">Passagem única</option>
+        <option value="in">Passagem integração</option>
+    </select> <br><br>
+    <button onclick="calcular()">Simular preço</button> <br><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+
+<script>
+    function calcular() {
+        var passageiro = slc_um.value;
+        var passagem = slc_dois.value;
+        var comumUni = passageiro == "co" && passagem == "un";
+        var comumInt = passageiro == "co" && passagem == "in";
+        var estudanteUni = passageiro == "es" && passagem == "un";
+        var estudanteInt = passageiro == "es" && passagem == "in";
+        var idosoInt =  passageiro == "id" && passagem == "in";
+        var idosoUni =  passageiro == "id" && passagem == "un";
+        var idoso = idosoInt || idosoUni;
+        var valorInt = 5.90.toFixed(2);
+        var valorUni = 4.40.toFixed(2);
+        var valorEstuInt = (valorInt / 2).toFixed(2);
+        var valorEstuUni = (valorUni / 2).toFixed(2);
+
+        if (estudanteInt) {
+            resultado.innerHTML = `Valor da passagem escolhida: R$${valorEstuInt}`
+        } else if (estudanteUni){
+            resultado.innerHTML = `Valor da passagem escolhida: R$${valorEstuUni}`;
+        } else if (comumInt) {
+            resultado.innerHTML = `Valor da passagem escolhida: R$${valorInt}`;
+        } else if (comumUni) {
+            resultado.innerHTML = `Valor da passagem escolhida: R$${valorUni}`;
+        } else if (idoso) {
+            resultado.innerHTML = `Por ser idoso ou PNE, você não pagará nada!`;
+        } else {
+            resultado.innerHTML = `Escolha as opções corretamente, por favor.`;
+        }
+    }
+</script>

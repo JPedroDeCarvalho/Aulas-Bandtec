@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#resultado_img {
+width: 200px;
+}
+    </style>
+</head>
+
+<body>
+    Temperatura do ambiente: <input id="ipt_um" type="text" placeholder="Ex:25..."> <br>
+    <button onclick="calcular()">Verificar clima</button> <br><br>
+    <div id="resultado"></div> <br><br>
+    <img id="resultado_img" src="" alt="">
+</body>
+
+</html>
+
+<script>
+function calcular() {
+    var temperatura = Number(ipt_um.value);
+
+     resultado.innerHTML = "";
+     resultado_img.src = "";
+
+    if (temperatura < 10) {
+        resultado.innerHTML = `Apropriada para conservar alimento!`;
+        resultado_img.src = "http://1.bp.blogspot.com/_TQy3VGPxIoY/S9CeCFiaDwI/AAAAAAAAAPo/YYb9BXrZrbE/s1600/Ma%C3%A7%C3%A3+II.png"
+    } else {
+        resultado.innerHTML = `Inapropriada para conservar alimento!`;
+        resultado_img.src = "http://3.bp.blogspot.com/-BpsdYO3H41w/Tc1iWK-vwsI/AAAAAAAAAds/RePM8FKDPnM/s320/imagem-maca-podre-copy1-787881.gif"
+    }
+}
+</script>
+
+
+

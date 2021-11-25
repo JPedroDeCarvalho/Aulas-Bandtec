@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de filhos menores de 10 anos: <input id="filhomenor" type="text" placeholder="Ex:3..."> <br>
+    Quantidade de filhos maiores de 10 anos: <input id="filhomaior" type="text" placeholder="Ex:2..."> <br>
+    <button onclick="aux()">Calcular Auxílio</button> <br> <br>
+    <div id="text"></div>
+</body>
+</html>
+
+<script>
+
+
+function aux() {
+    var auxfmenor = Number(filhomenor.value * 30);
+var auxfmaior = Number(filhomaior.value * 20);
+var auxmax = Number(auxfmenor + auxfmaior);
+
+    text.innerHTML = `Você tem ${filhomenor.value} filhos com menos de 10 anos e ${filhomaior.value}
+    filhos com mais de 10 anos, logo, seu Auxílio Filhos será de R$${auxmax}`
+}
+
+
+</script>

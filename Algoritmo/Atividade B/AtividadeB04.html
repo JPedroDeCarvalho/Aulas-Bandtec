@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeiro número:  <input style="border-radius: 5px;"  id="first" type="text" placeholder="Ex:0001..."> <br>
+    Segundo número:  <input style="border-radius: 5px;" id="second" type="text" placeholder="Ex:0001..."> <br> <br>
+    <button style="border-radius: 5px;" onclick="calcular()">Calcular média</button> <br>
+
+    <div id="div_media" ></div> <br>
+
+
+</body>
+</html>
+
+<script>
+function calcular () {
+    div_media.innerHTML = `Sua média foi de ${(Number (first.value) + Number (second.value)) / 2} `
+}
+
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Primeira nota: <input id="ipt_um" type="text" placeholder="Ex:10..."> <br>
+    Segunda nota: <input id="ipt_dois" type="text" placeholder="Ex:10..."> <br>
+    <button onclick="calcular()">Verificar situação</button>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var notaUm = Number(ipt_um.value);
+    var notaDois = Number(ipt_dois.value);
+    var media = (notaDois + notaUm) / 2;
+    if (media < 6) {
+        alert(`Sua nota foi ${media}. Tente outra vez...`);
+    } else {
+        alert(`Sua nota foi ${media}.Parabéns, aprovado!`);
+    }
+}
+</script>
+

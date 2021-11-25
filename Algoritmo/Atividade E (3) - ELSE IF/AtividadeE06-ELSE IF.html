@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="slc_um">
+        <option value="">- Qual time você torce? -</option>
+        <option value="santos">Santos</option>
+        <option value="palmeiras">Palmeiras</option>
+        <option value="saopaulo">São Paulo</option>
+        <option value="corinthians">Corinthians</option>
+    </select> <br>
+    <button onclick="calcular()">Fale sobre esse time</button> <br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+function calcular() {
+    var time = slc_um.value;
+    
+    if (time == "santos" ) {
+        resultado.innerHTML = `Agora que dá a bola é o Santos!`;
+        resultado.style = "color: black; background-color: white;";
+    }
+    else if (time == "palmeiras") {
+        resultado.innerHTML = `Salve o alviverde imponente!`;
+        resultado.style = "color: white; background-color: green;";
+    }
+    else if (time == "saopaulo") {
+        resultado.innerHTML = `Salve o Tricolor paulista!`;
+        resultado.style = "color: red; background-color: black;";
+    } 
+    else if (time == "corinthians") {
+        resultado.innerHTML = `Salve o Corinthians!`;
+        resultado.style = "color: white; background-color: black;";
+    }
+}
+
+</script>

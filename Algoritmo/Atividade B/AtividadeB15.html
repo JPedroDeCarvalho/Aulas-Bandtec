@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de votos Bolsonaro: <input id="bolsonaro" type="text" placeholder="Ex:1000..."> <br>
+    Quantidade de votos Lula: <input id="lula" type="text" placeholder="Ex:1000..."><br>
+    Quantidade de votos Nulos: <input id="nulos" type="text" placeholder="Ex:1000..."><br>
+    Quantidade de votos Brancos: <input id="branco" type="text" placeholder="Ex:1000..."><br>
+<button onclick="resultado()">Resultado da Eleição</button><br> <br>
+<div id="eleicao" ></div>
+<div id="style_eleicao" style="height: 30px; width: 0; background-color: green;"></div>
+<div id="lulinha" ></div>
+<div id="style_lulinha" style="height: 30px; width: 0; background-color:red;"></div>
+<div id="invalido" ></div>
+<div id="style_invalido" style="height: 30px; width: 0; background-color: grey;"></div>
+
+</body>
+</html>
+
+<script>
+function resultado() {
+  
+    var bolsonaro_total = bolsonaro.value;
+var lula_total = lula.value;
+var invalido_total = Number(nulos.value) + Number(branco.value);
+var total_votos = Number(bolsonaro_total) + Number(invalido_total) + Number(lula_total);
+
+var por_bolso = bolsonaro_total / total_votos * 100;
+var por_lula = lula_total / total_votos * 100;
+var por_inv = invalido_total / total_votos * 100;
+
+
+eleicao.innerHTML = `<b>Total de votos <u>${total_votos}</u></b> <br>
+<b>Total de votos para Bolsonaro:</b> ${por_bolso.toFixed(2)}% (${bolsonaro_total}) <br>`
+style_eleicao.style= `width: ${por_bolso}%; height: 30px; background-color: green;`
+
+lulinha.innerHTML = `<b>Total de votos para Lula:</b> ${por_lula.toFixed(2)}% (${lula_total}) <br>`
+style_lulinha.style= `width: ${por_lula}%; height: 30px; background-color: red;`
+
+invalido.innerHTML = `<b>Total de votos inválidos:</b> ${por_inv.toFixed(2)}% (${invalido_total}) <br>`
+style_invalido.style= `width: ${por_inv}%; height: 30px; background-color: grey;`
+
+}
+
+
+</script>

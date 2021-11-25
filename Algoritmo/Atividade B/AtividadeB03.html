@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Cidade Natal: <input id="ipt_cidade" type="text" placeholder="Ex: São Paulo"> <br>
+  Ano de Nascimento: <input id="nascimento" type="text" placeholder="Ex: 1999"> <br>
+  <button style="font-size: 20px; background-color: rgb(0, 22, 123); color: rgb(235, 235, 235); border-radius: 100px; float: left;" onclick="cadastro() "> Cadastrar! </button> 
+  <button style="font-size: 20px; background-color: rgb(0, 22, 123); color: rgb(235, 235, 235); border-radius: 100px;" onclick="sumir() "> Apagar! </button> <br>
+  <div id="div_mens">
+
+  </div>
+
+</body>
+</html>
+
+<script>
+function cadastro() {
+    div_mens.innerHTML += 'Você nasceu na cidade de <b> <i>'   + ipt_cidade.value    + '</i></b> em <b><u>' + nascimento.value + '</u></b><br>'
+    ipt_cidade.value = ''
+    nascimento.value = ''
+ 
+}
+
+function sumir() {
+  div_mens.innerHTML = ''
+}
+
+</script>
+
+
+
+
+ 

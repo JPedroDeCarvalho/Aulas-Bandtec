@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Seu nome: <input type="text" placeholder="Ex:Hinata Hyuga..." id="ipt_um"> <br>
+    Primeiro número da sorte: <input type="text" placeholder="Ex:10..." id="ipt_dois"><br>
+    Segundo número da sorte: <input type="text" placeholder="Ex:10..." id="ipt_tres"><br>
+    Terceiro número da sorte: <input type="text" placeholder="Ex:10..." id="ipt_quatro"><br>
+    <button onclick="sortear()">Sortear</button> <br> <br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    var sorteio = 0;
+    function sortear() {
+        var aleatorio = (Math.random() * 9 + 1).toFixed(0);
+        var nome = ipt_um.value;
+        var priSorte = Number(ipt_dois.value);
+        var segSorte = Number(ipt_tres.value);
+        var terSorte = Number(ipt_quatro.value);
+        var priSorteNot = priSorte < 1 || priSorte > 10;
+        var segSorteNot = segSorte < 1 || segSorte > 10;
+        var terSorteNot = terSorte < 1 || terSorte > 10;
+        var final = priSorteNot || segSorteNot || terSorteNot;
+        sorteio ++;
+
+        if (final) {
+            alert("Por favor, entre com um número entre 1 e 10!")
+        } else if (priSorte == aleatorio) {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio} <br>
+            Parabéns, ${nome} o seu número da sorte ${priSorte} foi sorteado após ${sorteio} sorteios!`;      
+        } else if (segSorte == aleatorio) {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio} <br>
+            Parabéns, ${nome} o seu número da sorte ${segSorte} foi sorteado após ${sorteio} sorteios!`;      
+        } else if (terSorte == aleatorio) {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio} <br>
+            Parabéns, ${nome} o seu número da sorte ${terSorte} foi sorteado após ${sorteio} sorteios!`;      
+        } else {
+            resultado.innerHTML = `Seu número da sorte foi ${aleatorio}`;
+        } 
+    }
+</script>
+

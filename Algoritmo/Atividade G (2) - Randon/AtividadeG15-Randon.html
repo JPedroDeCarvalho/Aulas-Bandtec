@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Números pares: <span id="parr">0</span> <br>
+    Números ímpares: <span id="imparr">0</span> </p>
+    <button onclick="calcular()">Sortear números</button> <br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+    var parMais = 1;
+    var imparMais = 1;
+
+    function calcular() {
+        var aleatorio = (Math.random()* 21 - 30).toFixed(0);
+        var impar = aleatorio == -29 || aleatorio == -27 || aleatorio == -25 ||
+        aleatorio == -23 || aleatorio == -21 || aleatorio == -19 || aleatorio == -17 ||
+        aleatorio == -15 || aleatorio == -13 || aleatorio == -11 || aleatorio == -9;
+        var par =  aleatorio == -30 || aleatorio == -28 || aleatorio == -26 ||
+        aleatorio == -24 || aleatorio == -22 || aleatorio == -20 || aleatorio == -18 ||
+        aleatorio == -16 || aleatorio == -14 || aleatorio == -12 || aleatorio == -10;
+
+
+        if (impar) {
+            imparr.innerHTML = `${imparMais++}`;
+            resultado.innerHTML = `Seu número sorteado foi ${aleatorio}`;
+        } else if (par) {
+            parr.innerHTML = `${parMais++}`;
+            resultado.innerHTML = `Seu número sorteado foi ${aleatorio}`;
+        }
+    }
+</script>
+

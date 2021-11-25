@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="calcular()">Curto 3 e 5</button> <br>
+    <span id="resultado"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var cont = 1;
+        while (cont <= 100) {
+            if(cont % 3 == 0 && cont % 5 == 0) {
+                resultado.innerHTML += `É TRI! É PENTA! <br>`;
+            }
+            else if(cont % 3 == 0) {
+                resultado.innerHTML += `É TRI! <br>`;
+            }
+            else if(cont % 5 == 0) {
+                resultado.innerHTML += `É PENTA! <br>`;
+            }
+            else if(cont % 3 != 0 || cont % 5 != 0) {
+                resultado.innerHTML += `${cont} <br>`;
+            }   
+        cont++;
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Horas médias de sono por noite: <input id="sono_horas" type="text" placeholder="Ex:8.30..."> <br>
+    <button onclick="cal_sono()">Calcular sono</button> <br>
+    <br>
+    <div id="fases"></div>
+
+</body>
+</html>
+
+<script>
+function cal_sono() {
+    var primeira_fase = sono_horas.value * 0.05;
+    var segunda_fase = sono_horas.value * 0.45;
+    var terceira_fase = sono_horas.value * 0.3;
+    var rem = sono_horas.value * 0.2;
+    var sono_total = sono_horas;
+
+    fases.innerHTML = `Ao dormir <u> ${sono_horas.value} </u> horas, você dormiu: <br>
+    ${primeira_fase} horas na <b>fase</b> 1 <br>
+    ${segunda_fase} horas na <b> fase 2 </b> <br>
+    ${terceira_fase} horas na <b>fase 3 </b><br>
+    ${rem} horas na fase <b> REM!
+
+`
+}
+
+</script>
